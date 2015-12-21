@@ -17,7 +17,13 @@ public class cameraFollow : MonoBehaviour {
     {
         
         
-        transform.position =  target.position+offset;
+        //transform.position =  target.position+offset;
+        Vector3 tpos = target.position + offset;
+
+        if (Vector3.Distance(transform.position, tpos) < 2.0)
+            return;
+        Vector3 targetPosition = tpos;
+        transform.position = Vector3.SmoothDamp(transform.position, tpos, ref velocity, smoothTime);
         //transform.position = new Vector3(transform.position.x, transform.position.y, origZ);
         
     }

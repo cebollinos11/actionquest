@@ -9,13 +9,14 @@ public class Enemy : Actor {
         wander,aggro
     }
 
+    public float meleeDash = 10f;
     public EnemyMode currentMode = EnemyMode.wander;
     public Vector3 TargetPosition;
     float wanderRange = 10f;
     float wanderFrequencyChange = 3f;
     float currentWanderFrequencyTimer = 0f;
 
-    float attackFreq = 2f;
+    public float attackFreq = 2f;
     float currentAttackTimer;
     GameObject Player;
 
@@ -31,7 +32,9 @@ public class Enemy : Actor {
 
         Jump();
         Vector3 direction = Player.transform.position - transform.position;
-        Push(direction.normalized, 10, 1);
+        Push(direction.normalized, meleeDash, 1);
+
+        sH.Flash(Color.magenta, 1);
 
         
         
