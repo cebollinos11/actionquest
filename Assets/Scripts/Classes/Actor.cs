@@ -22,8 +22,7 @@ public class Actor : MonoBehaviour {
 
     }
 
-    public void Move(Vector3 dir){
-        
+    public void Move(Vector3 dir){        
 
         rB.velocity += dir*speed*Time.timeScale*0.01f;
 
@@ -32,7 +31,7 @@ public class Actor : MonoBehaviour {
         if (dir.x > 0.5)
         {
             sH.SetSpriteOrientation(-1);
-            Debug.Log("orientation changed");
+            
         }
 
         if (dir.x < -0.5)
@@ -40,16 +39,18 @@ public class Actor : MonoBehaviour {
             sH.SetSpriteOrientation(1);
             
         }
-        
 
 
-        if (isTouchingFloor>0)
+
+        if (isTouchingFloor > 0 && rB.velocity.y<=0)
         {
 
-            //sH.StartMoveAnimation(SpriteHandler.AnimationType.walk );
+            sH.StartMoveAnimation(SpriteHandler.AnimationType.walk );
 
             if (rB.velocity.magnitude > maxSpeed)
             {
+                if(rB.velocity.y!=0)
+                    Debug.Log("Speed limited! y = " + rB.velocity.y);
                 rB.velocity = rB.velocity.normalized * maxSpeed;
             }
         }
@@ -66,12 +67,8 @@ public class Actor : MonoBehaviour {
             }
 
             rB.velocity += new Vector3(0, z, 0);
-
-
-
         
-        }
-        
+        }  
             
 
         
