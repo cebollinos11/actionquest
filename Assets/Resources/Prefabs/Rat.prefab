@@ -83,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.79999995, y: 13.3699999, z: 1.70200002}
+  m_LocalPosition: {x: 16.7999992, y: 1.39999998, z: 1.70200002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 408868}
@@ -162,12 +162,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a696d26a886c68488b5cc7d27796488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHP: 5
   speed: 100
-  maxSpeed: 10
-  jumpPower: 10
+  maxSpeed: 5
+  jumpPower: 25
   isTouchingFloor: 0
   rB: {fileID: 0}
   sH: {fileID: 0}
+  currentMode: 0
+  TargetPosition: {x: 0, y: 0, z: 0}
 --- !u!135 &13509786
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -204,7 +207,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1555fb61350d35d4bb328c34c5c04aca, type: 3}
+  m_Sprite: {fileID: 21300610, guid: 86cb6424fc85f334c82cd354bf3c84fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

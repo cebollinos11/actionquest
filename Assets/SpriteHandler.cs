@@ -167,6 +167,8 @@ public class SpriteHandler : MonoBehaviour {
     }
 
     public void RunDie() {
+
+        StopAllCoroutines();
         StartCoroutine(Die());
     }
     IEnumerator Die()
@@ -176,11 +178,11 @@ public class SpriteHandler : MonoBehaviour {
         Vector3 secureOrigScale = transform.localScale;
 
         Vector3 origScale = transform.localScale;
-        Vector3 targetScale = new Vector3(origScale.x * (1.2f), origScale.y * (0.2f), origScale.z);
+        Vector3 targetScale = new Vector3(origScale.x * (1.2f), origScale.y * (0.3f), origScale.z);
 
         do
         {
-            Debug.Log("Decrease!");
+           
             transform.localScale = Vector3.Lerp(targetScale, origScale, currentTime / MoveTime);
             currentTime -= Time.deltaTime;
             yield return null;
@@ -188,6 +190,9 @@ public class SpriteHandler : MonoBehaviour {
         } while (currentTime > 0f);
 
         transform.localScale = targetScale;
+        sR.color = Color.Lerp(sR.color, new Color(0.5f, 0.5f, 0.5f, 0.1f),0.5f);
+        Debug.Log("die finished targetscale " + transform.localScale.ToString());
+        
     }
 
     

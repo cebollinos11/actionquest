@@ -3,6 +3,9 @@ using System.Collections;
 
 public class Actor : MonoBehaviour {
 
+    public int maxHP = 5;
+    int currHP;
+
     public int speed = 100;
     public int maxSpeed = 10;
     public int jumpPower=10;
@@ -15,14 +18,42 @@ public class Actor : MonoBehaviour {
 
     public SpriteHandler sH;
 
+    int MoveBlocked;
+
+    public void BlockMove(float seconds){
+        StartCoroutine(BlockMe(seconds));
+    }
+
+    IEnumerator BlockMe(float blocktime) {
+
+        MoveBlocked++;
+        
+        yield return new WaitForSeconds(blocktime);
+        
+        MoveBlocked--;
+    
+    
+    }
+
     public void Start() {
+
+        currHP = maxHP;
 
         rB = GetComponent<Rigidbody>();
         sH = GetComponentInChildren<SpriteHandler>();
 
     }
 
-    public void Move(Vector3 dir){        
+    public void Push(Vector3 dir, float strength, float blockTime) {
+        dir = dir * strength;
+        rB.velocity += dir;
+        BlockMove(blockTime);
+    }
+
+    public void Move(Vector3 dir){
+
+        if (MoveBlocked > 0)
+            return;
 
         rB.velocity += dir*speed*Time.timeScale*0.01f;
 
@@ -42,7 +73,7 @@ public class Actor : MonoBehaviour {
 
 
 
-        if (isTouchingFloor > 0 && rB.velocity.y<=0)
+        if (isTouchingFloor > 0 && rB.velocity.y <= 0)
         {
 
             sH.StartMoveAnimation(SpriteHandler.AnimationType.walk );
@@ -78,10 +109,13 @@ public class Actor : MonoBehaviour {
 
     public void Jump() {
 
+        
+
         if (isTouchingFloor>0)
         {
             rB.velocity += new Vector3(0f, jumpPower, 0f);
             sH.StartMoveAnimation(SpriteHandler.AnimationType.jump);
+            Debug.Log("rata salta");
         }
         
     
@@ -94,6 +128,18 @@ public class Actor : MonoBehaviour {
             sH.StartMoveAnimation(SpriteHandler.AnimationType.walk);
             isTouchingFloor ++;
         
+        }
+
+
+        if (col.gameObject.tag == "Friendly" && enabled)
+        {
+            
+            Actor goActor = col.gameObject.GetComponent<Actor>();
+            Vector3 dir = col.transform.position - transform.position;
+            goActor.TakeDamage(1,dir);
+            goActor.Push(dir,3,0.5f);
+                
+          
         }
     }
 
@@ -117,6 +163,29 @@ public class Actor : MonoBehaviour {
         sH.Flash(Color.red, 1);
         sH.StartMoveAnimation(SpriteHandler.AnimationType.walk);
         rB.velocity += dir * 10;
+
+        currHP -= dmg;
+        if (currHP < 1)
+        {
+            Die();
+        }
+        
+    }
+
+    void Die() {
+        sH.RunDie();
+        enabled = false;
+        this.gameObject.tag = "Untagged";
+        Invoke("RemoveRigidbody", 1f);
+        
+    }
+
+    void RemoveRigidbody() {
+        Vector3 scale = sH.transform.lossyScale;
+        sH.transform.parent = null;
+        sH.transform.localScale = scale;
+        Destroy(this.gameObject);
+    
     }
 
 

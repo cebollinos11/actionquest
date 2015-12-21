@@ -28,8 +28,13 @@ public class Enemy : Actor {
 
     void JumpAttack() {
 
+
         Jump();
-        sH.Flash(Color.red, 1);
+        Vector3 direction = Player.transform.position - transform.position;
+        Push(direction.normalized, 10, 1);
+
+        
+        
     
     }
 
@@ -49,13 +54,9 @@ public class Enemy : Actor {
 
             TargetPosition = Player.transform.position;
             Move(Vector3.Scale((TargetPosition - transform.position), new Vector3(1, 0, 1)));
-
-
-
-
             
 
-            if ((TargetPosition - Player.transform.position).sqrMagnitude < 100) {
+            if ((TargetPosition - Player.transform.position).sqrMagnitude < 200) {
 
 
                 currentAttackTimer -= Time.deltaTime;
@@ -87,7 +88,7 @@ public class Enemy : Actor {
 
             
 
-            if ((Player.transform.position - transform.position).sqrMagnitude < 150.0f)
+            if ((Player.transform.position - transform.position).sqrMagnitude < 300.0f)
             {
                 currentMode = EnemyMode.aggro;
             }
@@ -109,4 +110,6 @@ public class Enemy : Actor {
         Debug.Log(rB.velocity);
     
     }
+
+    
 }

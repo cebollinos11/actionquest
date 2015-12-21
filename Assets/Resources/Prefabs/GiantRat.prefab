@@ -162,12 +162,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a696d26a886c68488b5cc7d27796488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHP: 5
   speed: 100
   maxSpeed: 10
-  jumpPower: 10
+  jumpPower: 50
   isTouchingFloor: 0
   rB: {fileID: 0}
   sH: {fileID: 0}
+  currentMode: 0
+  TargetPosition: {x: 0, y: 0, z: 0}
 --- !u!135 &13513476
 SphereCollider:
   m_ObjectHideFlags: 1

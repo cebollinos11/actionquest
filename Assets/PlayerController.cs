@@ -52,6 +52,9 @@ public class PlayerController : Actor
 
         
 
+
+        
+
 	
 	}
 
@@ -62,7 +65,7 @@ public class PlayerController : Actor
         GameObject go = (GameObject)Instantiate(MagicSpell, transform.position + direction + Vector3.up, transform.rotation);
         Projectile pj = go.GetComponent<Projectile>();
         pj.direction = direction;
-        pj.sH.Flash(Color.blue, 99);
+        
         pj.tag = this.gameObject.tag;
 
         
