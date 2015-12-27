@@ -41,9 +41,9 @@ public class Projectile : MonoBehaviour {
         transform.Translate(direction * speed*Time.deltaTime);
 
         currentTTL-=Time.deltaTime;
-        if (currentTTL < 0)
+        if (currentTTL < -ttl*2)
         {
-            //Kill();
+            Kill();
         }
 
         if (goDown)

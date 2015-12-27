@@ -7,6 +7,15 @@ public class PlayerController : Actor
     [SerializeField]
     GameObject MagicSpell;
     float _h, _v;
+
+    public GameObject equippedSpell;
+    Spell loadedSpell;
+
+    void Start() {
+        base.Start();
+        loadedSpell = equippedSpell.GetComponent<Spell>();
+    
+    }
 	
 	// Update is called once per frame
 	void Update () {        
@@ -39,9 +48,7 @@ public class PlayerController : Actor
 
         if (Input.GetButtonDown("AttackE"))
         {
-            CastMagicSpell(Vector3.right);
-            CastMagicSpell(new Vector3(1,0,0.3f));
-            CastMagicSpell(new Vector3(1, 0, -0.3f));
+            CastMagicSpell(Vector3.right);         
         }
 
         if (Input.GetButtonDown("Jump"))
@@ -59,15 +66,20 @@ public class PlayerController : Actor
 	}
 
     void CastMagicSpell(Vector3 direction) {
-        AudioManager.PlayClip(AudioClipsType.throwProjectile);
-        sH.StartMoveAnimation(SpriteHandler.AnimationType.attack);
-        sH.Flash(Color.blue, 1);
 
-        GameObject go = (GameObject)Instantiate(MagicSpell, transform.position + direction + Vector3.up, transform.rotation);
-        Projectile pj = go.GetComponent<Projectile>();
-        pj.direction = direction;
+
+        loadedSpell.Cast(this.gameObject, direction);
+        return;
+
+        //AudioManager.PlayClip(AudioClipsType.throwProjectile);
+        //sH.StartMoveAnimation(SpriteHandler.AnimationType.attack);
+        //sH.Flash(Color.blue, 1);
+
+        //GameObject go = (GameObject)Instantiate(MagicSpell, transform.position + direction + Vector3.up, transform.rotation);
+        //Projectile pj = go.GetComponent<Projectile>();
+        //pj.direction = direction;
         
-        pj.tag = this.gameObject.tag;
+        //pj.tag = this.gameObject.tag;
 
         
         

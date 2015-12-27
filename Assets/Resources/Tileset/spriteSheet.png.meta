@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 86cb6424fc85f334c82cd354bf3c84fd
-timeCreated: 1450708008
+timeCreated: 1451237076
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -5964,8 +5964,8 @@ TextureImporter:
         y: 1280
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: spriteSheet_428
       rect:
@@ -9294,8 +9294,8 @@ TextureImporter:
         y: 928
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: spriteSheet_761
       rect:

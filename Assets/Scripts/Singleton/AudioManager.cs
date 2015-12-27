@@ -24,6 +24,11 @@ public class AudioManager : Singleton<AudioManager>
     public List<AudioType> audioList = new List<AudioType>();
     Dictionary<AudioClipsType, AudioClip> audioMap = new Dictionary<AudioClipsType, AudioClip>();
 
+    public static void PlaySpecific(AudioClip soundEffect)
+    {
+        Instance.mainAudioSource.PlayOneShot(soundEffect);
+    }
+
     public static void PlayClip(AudioClipsType type)
     {
         Instance.mainAudioSource.PlayOneShot(Instance.audioMap[type]);
