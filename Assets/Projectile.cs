@@ -28,6 +28,8 @@ public class Projectile : MonoBehaviour {
     }
 
     void OnEnable() {
+
+        ttl += Random.Range(0f, ttl * 0.1f);
         
         currentTTL = ttl;
         

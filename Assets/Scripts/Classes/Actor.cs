@@ -20,6 +20,10 @@ public class Actor : MonoBehaviour {
 
     int MoveBlocked;
 
+    public AudioClip soundGetHit;
+
+    public AudioSource aSource;
+
     public void BlockMove(float seconds){
         StartCoroutine(BlockMe(seconds));
     }
@@ -41,6 +45,7 @@ public class Actor : MonoBehaviour {
 
         rB = GetComponent<Rigidbody>();
         sH = GetComponentInChildren<SpriteHandler>();
+        aSource = GetComponent<AudioSource>();
 
     }
 
@@ -157,6 +162,11 @@ public class Actor : MonoBehaviour {
 
     public virtual void TakeDamage(int dmg, Vector3 dir)
     {
+
+        //manage audio
+        aSource.clip = soundGetHit;
+        aSource.Play();
+
 
         Debug.Log("take damage in actor");
         sH.Flash(Color.red, 1);

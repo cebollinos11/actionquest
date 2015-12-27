@@ -20,6 +20,8 @@ public class Enemy : Actor {
     float currentAttackTimer;
     GameObject Player;
 
+    public AudioClip soundAttack;
+
 	// Use this for initialization
 	void Start () {
         base.Start();
@@ -30,9 +32,16 @@ public class Enemy : Actor {
 
     IEnumerator JumpAttackTimed() {
 
+        //audio
+
+        
+
+
         sH.Flash(Color.magenta, 2);
         BlockMove(0.5f);
         yield return new WaitForSeconds(0.5f);
+
+
         JumpAttack();
     
 
@@ -41,7 +50,8 @@ public class Enemy : Actor {
 
     void JumpAttack() {
 
-
+        aSource.clip = soundAttack;
+        aSource.Play();
         Jump();
         Vector3 direction = Player.transform.position - transform.position;
         Push(direction.normalized, meleeDash, 1);
