@@ -10,7 +10,14 @@ public class Projectile : MonoBehaviour {
     public string tag;
     public GameObject ParticleHit;
 
+    public float gravity;
+    public float dropPercent;
+
+    bool goDown;
+
     float currentTTL;
+
+    public GameObject particleOnHitWall;
 	// Use this for initialization
 
     public SpriteHandler sH;
@@ -34,7 +41,19 @@ public class Projectile : MonoBehaviour {
         currentTTL-=Time.deltaTime;
         if (currentTTL < 0)
         {
-            Kill();
+            //Kill();
+        }
+
+        if (goDown)
+        {
+            transform.Translate(Vector3.up * gravity * Time.deltaTime);
+            gravity *= 1.1f;
+        }
+
+        else { 
+            if(currentTTL < dropPercent*ttl){
+                goDown = true;
+            }
         }
 	    
 	}
@@ -66,6 +85,13 @@ public class Projectile : MonoBehaviour {
             Instantiate(ParticleHit, transform.position, Quaternion.identity);
             Kill();
         }
+
+        if (go.tag == "Floor") {
+            Instantiate(particleOnHitWall,transform.position,Quaternion.identity);
+            Kill();
+        }
+
+        Debug.Log(go.tag);
             
     }
 

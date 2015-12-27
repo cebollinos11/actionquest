@@ -80,8 +80,7 @@ public class Actor : MonoBehaviour {
 
             if (rB.velocity.magnitude > maxSpeed)
             {
-                if(rB.velocity.y!=0)
-                    Debug.Log("Speed limited! y = " + rB.velocity.y);
+                
                 rB.velocity = rB.velocity.normalized * maxSpeed;
             }
         }

@@ -27,6 +27,18 @@ public class Enemy : Actor {
         TargetPosition = transform.position;
 	}
 
+
+    IEnumerator JumpAttackTimed() {
+
+        sH.Flash(Color.magenta, 2);
+        BlockMove(0.5f);
+        yield return new WaitForSeconds(0.5f);
+        JumpAttack();
+    
+
+
+    }
+
     void JumpAttack() {
 
 
@@ -34,7 +46,7 @@ public class Enemy : Actor {
         Vector3 direction = Player.transform.position - transform.position;
         Push(direction.normalized, meleeDash, 1);
 
-        sH.Flash(Color.magenta, 1);
+        
 
         
         
@@ -43,7 +55,8 @@ public class Enemy : Actor {
 
     void Attack() {
 
-        JumpAttack();
+        StartCoroutine(JumpAttackTimed());
+        
     
     }
 	

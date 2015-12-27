@@ -133,10 +133,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  ttl: 2
+  ttl: 1
   direction: {x: 0, y: 0, z: 1}
   tag: 
   ParticleHit: {fileID: 155264, guid: 8c3cb41a3a2d4b74499028d4e0b12812, type: 2}
+  gravity: -10
+  dropPercent: .200000003
   sH: {fileID: 0}
 --- !u!114 &11460058
 MonoBehaviour:
@@ -227,7 +229,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: ttl
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsActive
@@ -269,6 +271,14 @@ Prefab:
       propertyPath: ParticleHit
       value: 
       objectReference: {fileID: 155264, guid: 8c3cb41a3a2d4b74499028d4e0b12812, type: 2}
+    - target: {fileID: 0}
+      propertyPath: dropPercent
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: gravity
+      value: -10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 166512}
