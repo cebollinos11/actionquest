@@ -50,8 +50,7 @@ public class Enemy : Actor {
 
     void JumpAttack() {
 
-        aSource.clip = soundAttack;
-        aSource.Play();
+        AudioManager.PlayClip(AudioClipsType.dash);
         Jump();
         Vector3 direction = Player.transform.position - transform.position;
         Push(direction.normalized, meleeDash, 1);
@@ -135,6 +134,12 @@ public class Enemy : Actor {
 
         Debug.Log(rB.velocity);
     
+    }
+
+    public override void Die() {
+
+        base.Die();
+        AudioManager.PlayClip(AudioClipsType.enemyDead);
     }
 
     

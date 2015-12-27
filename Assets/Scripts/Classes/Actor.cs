@@ -45,6 +45,8 @@ public class Actor : MonoBehaviour {
 
         rB = GetComponent<Rigidbody>();
         sH = GetComponentInChildren<SpriteHandler>();
+
+        gameObject.AddComponent<AudioSource>();
         aSource = GetComponent<AudioSource>();
 
     }
@@ -119,7 +121,7 @@ public class Actor : MonoBehaviour {
         {
             rB.velocity += new Vector3(0f, jumpPower, 0f);
             sH.StartMoveAnimation(SpriteHandler.AnimationType.jump);
-            Debug.Log("rata salta");
+            
         }
         
     
@@ -164,8 +166,7 @@ public class Actor : MonoBehaviour {
     {
 
         //manage audio
-        aSource.clip = soundGetHit;
-        aSource.Play();
+        AudioManager.PlayClip(AudioClipsType.getHurt);
 
 
         Debug.Log("take damage in actor");
@@ -181,7 +182,8 @@ public class Actor : MonoBehaviour {
         
     }
 
-    void Die() {
+    public virtual void Die() {
+        StopAllCoroutines();
         sH.RunDie();
         enabled = false;
         this.gameObject.tag = "Untagged";

@@ -90,6 +90,7 @@ public class Projectile : MonoBehaviour {
 
         if (go.tag == "Floor") {
             Instantiate(particleOnHitWall,transform.position,Quaternion.identity);
+            AudioManager.PlayClip(AudioClipsType.thump);
             Kill();
         }
 

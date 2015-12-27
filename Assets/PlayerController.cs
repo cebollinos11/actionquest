@@ -59,6 +59,7 @@ public class PlayerController : Actor
 	}
 
     void CastMagicSpell(Vector3 direction) {
+        AudioManager.PlayClip(AudioClipsType.throwProjectile);
         sH.StartMoveAnimation(SpriteHandler.AnimationType.attack);
         sH.Flash(Color.blue, 1);
 
