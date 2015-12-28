@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BasicProjectile : Spell {
 
-    string name = "basic projectileeee";
+    public string name = "basic projectileeee";
 
 	// Use this for initialization
 	void Start () {

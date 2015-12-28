@@ -87,7 +87,7 @@ public class Enemy : Actor {
                 currentAttackTimer -= Time.deltaTime;
                 if (currentAttackTimer < 0)
                 {
-                    currentAttackTimer = attackFreq;
+                    currentAttackTimer = attackFreq+Random.Range(0f,attackFreq*0.3f);
                     Attack();
                 }
 

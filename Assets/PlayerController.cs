@@ -1,19 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerController : Actor
+public class PlayerController : SpellCaster
 {
 
-    [SerializeField]
-    GameObject MagicSpell;
+    
     float _h, _v;
 
-    public GameObject equippedSpell;
-    Spell loadedSpell;
+    
 
     void Start() {
         base.Start();
-        loadedSpell = equippedSpell.GetComponent<Spell>();
+        
     
     }
 	
@@ -33,28 +31,65 @@ public class PlayerController : Actor
 
         if (Input.GetButtonDown("AttackN"))
         {
-            CastMagicSpell(Vector3.forward);
+            CastSpell(loadedBasicSpell, Vector3.forward);            
         }
 
         if (Input.GetButtonDown("AttackS"))
         {
-            CastMagicSpell(Vector3.back);
+            CastSpell(loadedBasicSpell, Vector3.back);
         }
 
         if (Input.GetButtonDown("AttackW"))
         {
-            CastMagicSpell(Vector3.left);
+            CastSpell(loadedBasicSpell, Vector3.left);
         }
 
         if (Input.GetButtonDown("AttackE"))
         {
-            CastMagicSpell(Vector3.right);         
+            CastSpell(loadedBasicSpell, Vector3.right);         
         }
 
         if (Input.GetButtonDown("Jump"))
         {
-            Jump();
+            //Jump();
+
+            Push(new Vector3(h, 0f, v),15,0.4f);
+            AudioManager.PlayClip(AudioClipsType.dash);
         }
+
+        
+        //charge magic
+        if (Input.GetButton("AttackW") || Input.GetButton("AttackN") ||Input.GetButton("AttackE") ||Input.GetButton("AttackS"))
+        {
+             ChargeMagic(Time.deltaTime);
+        }
+
+
+        if (canCastSpecial)
+        {
+
+            if (Input.GetButtonUp("AttackN"))
+            {
+                CastSpell(loadedSpecialSpell, Vector3.forward);
+            }
+
+            if (Input.GetButtonUp("AttackS"))
+            {
+                CastSpell(loadedSpecialSpell, Vector3.back);
+            }
+
+            if (Input.GetButtonUp("AttackW"))
+            {
+                CastSpell(loadedSpecialSpell, Vector3.left);
+            }
+
+            if (Input.GetButtonUp("AttackE"))
+            {
+                CastSpell(loadedSpecialSpell, Vector3.right);
+            }
+        
+        }
+        
 
 
         
@@ -65,24 +100,5 @@ public class PlayerController : Actor
 	
 	}
 
-    void CastMagicSpell(Vector3 direction) {
-
-
-        loadedSpell.Cast(this.gameObject, direction);
-        return;
-
-        //AudioManager.PlayClip(AudioClipsType.throwProjectile);
-        //sH.StartMoveAnimation(SpriteHandler.AnimationType.attack);
-        //sH.Flash(Color.blue, 1);
-
-        //GameObject go = (GameObject)Instantiate(MagicSpell, transform.position + direction + Vector3.up, transform.rotation);
-        //Projectile pj = go.GetComponent<Projectile>();
-        //pj.direction = direction;
-        
-        //pj.tag = this.gameObject.tag;
-
-        
-        
     
-    }
 }

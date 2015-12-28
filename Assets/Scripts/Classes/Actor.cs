@@ -22,7 +22,7 @@ public class Actor : MonoBehaviour {
 
     public AudioClip soundGetHit;
 
-    public AudioSource aSource;
+    
 
     public void BlockMove(float seconds){
         StartCoroutine(BlockMe(seconds));
@@ -47,7 +47,9 @@ public class Actor : MonoBehaviour {
         sH = GetComponentInChildren<SpriteHandler>();
 
         gameObject.AddComponent<AudioSource>();
-        aSource = GetComponent<AudioSource>();
+       
+
+       
 
     }
 
