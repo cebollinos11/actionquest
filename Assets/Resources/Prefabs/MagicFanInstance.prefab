@@ -40,7 +40,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 166512, guid: db29038b872b16a42a9b314a296e93c1, type: 2}
-  numberOfProjectiles: 5
+  numberOfProjectiles: 6
   waitTime: .00999999978
   direction: {x: 0, y: 0, z: 0}
   owner: {fileID: 0}
@@ -59,6 +59,10 @@ Prefab:
       propertyPath: projectile
       value: 
       objectReference: {fileID: 166512, guid: db29038b872b16a42a9b314a296e93c1, type: 2}
+    - target: {fileID: 0}
+      propertyPath: numberOfProjectiles
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 154458}

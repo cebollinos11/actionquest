@@ -41,8 +41,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Magic Dagger
   toInstantiate: {fileID: 166512, guid: 42ba932191145374db39ee32212521ee, type: 2}
-  soundOnCast: {fileID: 8300000, guid: 7c1b7d3c4922a804f9ec40bf1473971d, type: 3}
-  name: basic projectileeee
+  soundOnCast: {fileID: 8300000, guid: 9fbf3d3bfee716044bac80102103f6c3, type: 3}
+  name: Magic Dagger
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -61,7 +61,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: soundOnCast
       value: 
-      objectReference: {fileID: 8300000, guid: 7c1b7d3c4922a804f9ec40bf1473971d, type: 3}
+      objectReference: {fileID: 8300000, guid: 9fbf3d3bfee716044bac80102103f6c3, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 151994}

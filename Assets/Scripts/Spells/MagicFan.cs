@@ -17,7 +17,7 @@ public class MagicFan : Spell {
         mfi.direction = direction1;
         mfi.Run(owner1,direction1);
 
-        owner1.GetComponent<Actor>().BlockMove(0.5f);
+        
         
 
 

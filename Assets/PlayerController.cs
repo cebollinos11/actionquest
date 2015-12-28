@@ -6,12 +6,16 @@ public class PlayerController : SpellCaster
 
     
     float _h, _v;
+    public Vector3 lastDirection;
+
+    SpellAimer spellAimer;
 
     
 
     void Start() {
         base.Start();
-        
+        spellAimer = GetComponentInChildren<SpellAimer>();
+        lastDirection = Vector3.right;
     
     }
 	
@@ -23,10 +27,12 @@ public class PlayerController : SpellCaster
 
         if (h != 0f || v!=0f) {
 
-            
-            Move(new Vector3(h,0f,v));
+            lastDirection = new Vector3(h, 0f, v);
+            Move(lastDirection);
             _h = h;
             _v = v;
+
+            lastDirection.Normalize();
         }
 
         if (Input.GetButtonDown("AttackN"))
@@ -68,28 +74,34 @@ public class PlayerController : SpellCaster
         if (canCastSpecial)
         {
 
+            //spellAimer
+            spellAimer.turnOn(true);
+
             if (Input.GetButtonUp("AttackN"))
             {
-                CastSpell(loadedSpecialSpell, Vector3.forward);
+                CastSpell(loadedSpecialSpell, lastDirection);
             }
 
             if (Input.GetButtonUp("AttackS"))
             {
-                CastSpell(loadedSpecialSpell, Vector3.back);
+                CastSpell(loadedSpecialSpell, lastDirection);
             }
 
             if (Input.GetButtonUp("AttackW"))
             {
-                CastSpell(loadedSpecialSpell, Vector3.left);
+                CastSpell(loadedSpecialSpell, lastDirection);
             }
 
             if (Input.GetButtonUp("AttackE"))
             {
-                CastSpell(loadedSpecialSpell, Vector3.right);
+                CastSpell(loadedSpecialSpell, lastDirection);
             }
-        
+
         }
-        
+
+        else {
+            spellAimer.turnOn(false);
+        }
 
 
         
