@@ -58,6 +58,8 @@ public class SpellCaster : Actor {
 
     public void CastSpell(Spell spellToCast, Vector3 direction)
     {
+        sH.StartMoveAnimation(SpriteHandler.AnimationType.attack);
+        sH.Flash(Color.white, 1);
         magicCharge = 0f;
         checkCanCast();
         spellToCast.Cast(this.gameObject, direction);

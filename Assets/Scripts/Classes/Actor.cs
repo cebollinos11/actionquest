@@ -23,6 +23,11 @@ public class Actor : MonoBehaviour {
     public AudioClip soundGetHit;
 
     
+    public AudioClip soundSteps;
+    public float stepsFreq = 0.7f;
+    float stepsSoundCounter;
+
+    
 
     public void BlockMove(float seconds){
         StartCoroutine(BlockMe(seconds));
@@ -85,13 +90,26 @@ public class Actor : MonoBehaviour {
         if (isTouchingFloor > 0 && rB.velocity.y <= 0)
         {
 
-            sH.StartMoveAnimation(SpriteHandler.AnimationType.walk );
+            
 
             if (rB.velocity.magnitude > maxSpeed)
             {
                 
                 rB.velocity = rB.velocity.normalized * maxSpeed;
             }
+
+
+            //handle footsteps
+            if (soundSteps) {
+                stepsSoundCounter -= Time.deltaTime;
+                if (stepsSoundCounter < 0)
+                {
+                    stepsSoundCounter = stepsFreq;
+                    AudioManager.PlaySpecific(soundSteps);
+                    sH.StartMoveAnimation(SpriteHandler.AnimationType.walk);
+                }
+            }
+
         }
 
         else { //if its jumping

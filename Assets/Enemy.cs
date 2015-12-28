@@ -22,11 +22,14 @@ public class Enemy : Actor {
 
     public AudioClip soundAttack;
 
+    GameObject loot;
+
 	// Use this for initialization
 	void Start () {
         base.Start();
         Player = GameObject.FindGameObjectWithTag("Friendly");
         TargetPosition = transform.position;
+        loot = (GameObject)Resources.Load("Prefabs/Loot/Money");
 	}
 
 
@@ -140,6 +143,7 @@ public class Enemy : Actor {
 
         base.Die();
         AudioManager.PlayClip(AudioClipsType.enemyDead);
+        Instantiate(loot, transform.position, Quaternion.identity);
     }
 
     
