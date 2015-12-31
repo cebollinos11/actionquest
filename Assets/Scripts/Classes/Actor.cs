@@ -10,12 +10,15 @@ public class Actor : MonoBehaviour {
     public int maxSpeed = 10;
     public int jumpPower=10;
 
+    [HideInInspector]
     public int isTouchingFloor;
     
     float WalkAnimLimit = 1f;
 
+    [HideInInspector]
     public Rigidbody rB;
 
+    [HideInInspector]
     public SpriteHandler sH;
 
     int MoveBlocked;

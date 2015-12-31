@@ -206,7 +206,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   smoothTime: .300000012
-  fixedangle: {x: 0, y: 0, z: 0}
   offset: {x: 0, y: 5, z: -5}
 --- !u!114 &11442768
 MonoBehaviour:
@@ -220,7 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakeStrength: .5
-  shakeDuration: .100000001
+  shakeDuration: .200000003
   zoomTime: 2
 --- !u!114 &11448102
 MonoBehaviour:

@@ -19,7 +19,6 @@ public class SpellCaster : Actor {
     void checkCanCast() {
 
 
-
         if (magicCharge > magicChargeLimit)
         {
             if (!canCastSpecial) {
@@ -64,6 +63,5 @@ public class SpellCaster : Actor {
         checkCanCast();
         spellToCast.Cast(this.gameObject, direction);
     }
-
     
 }
