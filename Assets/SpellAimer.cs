@@ -33,7 +33,11 @@ public class SpellAimer : MonoBehaviour {
 
     void OnEnable()
     {
-        sH.Flash(Color.blue, 10);
+        if (sH)
+        {
+            sH.Flash(Color.blue, 10);   
+        }
+       
     }
 
   

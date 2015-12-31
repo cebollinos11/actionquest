@@ -101,8 +101,12 @@ public class PlayerController : SpellCaster
 
         else {
             spellAimer.turnOn(false);
+
+            
         }
 
+
+      
 
         
 
@@ -111,6 +115,12 @@ public class PlayerController : SpellCaster
 
 	
 	}
+
+    public override void TakeDamage(int dmg, Vector3 dir)
+    {
+        base.TakeDamage(dmg, dir);
+        ActionController.CamShake();
+    }
 
     
 }

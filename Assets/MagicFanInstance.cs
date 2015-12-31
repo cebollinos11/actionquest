@@ -14,12 +14,13 @@ public class MagicFanInstance : MonoBehaviour {
     IEnumerator CastFan()
     {
 
+        ActionController.CamShake();
         for (int i = 0; i < numberOfProjectiles; i++)
         {
             ThrowOneProjectile(Quaternion.Euler(0,i*10-(numberOfProjectiles-i)/2*10,0)*direction);
             yield return new WaitForSeconds(waitTime);
         }
-
+        
         Destroy(gameObject);
 
     }

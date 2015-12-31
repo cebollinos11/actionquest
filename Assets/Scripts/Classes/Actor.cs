@@ -110,6 +110,8 @@ public class Actor : MonoBehaviour {
                 }
             }
 
+            sH.StartMoveAnimation(SpriteHandler.AnimationType.walk);
+
         }
 
         else { //if its jumping
@@ -149,10 +151,19 @@ public class Actor : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
+
+        
         //check floor
         if (col.gameObject.tag == "Floor") {
             sH.StartMoveAnimation(SpriteHandler.AnimationType.walk);
             isTouchingFloor ++;
+
+
+            Debug.Log(gameObject.name + " " + rB.velocity.y);
+            if (rB.velocity.y < 0f && transform.lossyScale.x > 2)
+            {
+                ActionController.CamShake();
+            }
         
         }
 
@@ -177,6 +188,8 @@ public class Actor : MonoBehaviour {
         {
 
             isTouchingFloor--;
+
+            
 
         }
     }

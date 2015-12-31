@@ -4,11 +4,11 @@ using System.Collections;
 public class Enemy : Actor {
 
 
-    public enum EnemyMode { 
-    
+    public enum EnemyMode {     
         wander,aggro
     }
 
+    [SerializeField] AudioClip warCrySound;
     public float meleeDash = 10f;
     public EnemyMode currentMode = EnemyMode.wander;
     public Vector3 TargetPosition;
@@ -35,14 +35,12 @@ public class Enemy : Actor {
 
     IEnumerator JumpAttackTimed() {
 
-        //audio
+        //audio     
+        float jumpAtackFreezeTime = 0.2f;
 
-        
-
-
-        sH.Flash(Color.magenta, 2);
-        BlockMove(0.5f);
-        yield return new WaitForSeconds(0.5f);
+        sH.Flash(Color.black, 1);
+        BlockMove(jumpAtackFreezeTime);
+        yield return new WaitForSeconds(jumpAtackFreezeTime);
 
 
         JumpAttack();
@@ -53,7 +51,7 @@ public class Enemy : Actor {
 
     void JumpAttack() {
 
-        AudioManager.PlayClip(AudioClipsType.dash);
+        AudioManager.PlaySpecific(warCrySound);
         Jump();
         Vector3 direction = Player.transform.position - transform.position;
         Push(direction.normalized, meleeDash, 1);
@@ -82,9 +80,9 @@ public class Enemy : Actor {
 
             TargetPosition = Player.transform.position;
             Move(Vector3.Scale((TargetPosition - transform.position), new Vector3(1, 0, 1)));
-            
 
-            if ((TargetPosition - Player.transform.position).sqrMagnitude < 200) {
+
+            if ((TargetPosition - transform.position).sqrMagnitude < 150) {
 
 
                 currentAttackTimer -= Time.deltaTime;
