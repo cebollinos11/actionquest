@@ -9,6 +9,8 @@ public class cameraHandler : MonoBehaviour {
     float shakeStrength;
     [SerializeField]
     float shakeDuration;
+    
+    float shakeFrequency;
     public float zoomTime;
 
     private float yVelocity = 0.0F;
@@ -16,11 +18,16 @@ public class cameraHandler : MonoBehaviour {
 	void Start () {
         cam = GetComponent<Camera>();
         originalSize = cam.orthographicSize;
+        shakeFrequency = 1 / shakeDuration;
 	}
 
     void Update() {
 
-        
+        if (Input.GetKeyDown(KeyCode.Q)) {
+
+            ShakeCam();
+
+        }
             
     }
 
@@ -33,18 +40,25 @@ public class cameraHandler : MonoBehaviour {
 
         float currentShake = shakeDuration;
         Vector3 originalPos = transform.position;
+
+        float currentStrength = shakeStrength;
+
         
 
         do
         {
-
-            transform.position += Random.insideUnitSphere * shakeStrength;            
+            float y = Mathf.Sin(2 * Mathf.PI * shakeFrequency * (shakeDuration - currentShake)) * currentStrength;            
+            transform.position += new Vector3(0, -y, 0);   
+            //cam.orthographicSize -= y;
             currentShake -= Time.deltaTime;
             yield return new WaitForEndOfFrame();
 
         } while (currentShake > 0);
 
-        transform.position = originalPos;
+        //transform.position = originalPos;
+        cam.orthographicSize = originalSize;
+
+        
 
     }
 
