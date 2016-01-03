@@ -20,7 +20,15 @@ public class PlayerController : SpellCaster
     }
 	
 	// Update is called once per frame
-	void Update () {        
+	void Update () {
+
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+
+            TakeDamage(0, Vector3.zero);
+
+        }
 
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");

@@ -21,15 +21,7 @@ public class cameraHandler : MonoBehaviour {
         shakeFrequency = 1 / shakeDuration;
 	}
 
-    void Update() {
-
-        if (Input.GetKeyDown(KeyCode.Q)) {
-
-            ShakeCam();
-
-        }
-            
-    }
+ 
 
     public void ShakeCam() {
         StartCoroutine(ShakeIT());

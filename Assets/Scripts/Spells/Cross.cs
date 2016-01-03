@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MagicFan : Spell {
+public class Cross : Spell {
 
  
 
@@ -15,9 +15,10 @@ public class MagicFan : Spell {
 
         mfi.owner = owner1;
         mfi.direction = direction1;
-        mfi.Run(owner1,direction1);
+        mfi.Run(owner1,direction1);    
 
-             
+
+        
 
 
     }

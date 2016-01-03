@@ -30,6 +30,8 @@ public class Actor : MonoBehaviour {
     public float stepsFreq = 0.7f;
     float stepsSoundCounter;
 
+    [HideInInspector]public GameObject particleOnHit;
+
     
 
     public void BlockMove(float seconds){
@@ -55,6 +57,8 @@ public class Actor : MonoBehaviour {
         sH = GetComponentInChildren<SpriteHandler>();
 
         gameObject.AddComponent<AudioSource>();
+
+        particleOnHit = (GameObject)Resources.Load("Prefabs/Particles/ParticleOnHitDamage");
        
 
        
@@ -183,6 +187,8 @@ public class Actor : MonoBehaviour {
         }
     }
 
+   
+
 
     void OnCollisionExit(Collision col)
     {
@@ -201,11 +207,12 @@ public class Actor : MonoBehaviour {
     public virtual void TakeDamage(int dmg, Vector3 dir)
     {
 
+       
         //manage audio
         AudioManager.PlayClip(AudioClipsType.getHurt);
 
+        Instantiate(particleOnHit, transform.position + new Vector3(0, 1, -1), Quaternion.identity);
 
-        Debug.Log("take damage in actor");
         sH.Flash(Color.red, 1);
         sH.StartMoveAnimation(SpriteHandler.AnimationType.walk);
         rB.velocity += dir * 10;
@@ -231,6 +238,7 @@ public class Actor : MonoBehaviour {
         Vector3 scale = sH.transform.lossyScale;
         sH.transform.parent = null;
         sH.transform.localScale = scale;
+        
         Destroy(this.gameObject);
     
     }

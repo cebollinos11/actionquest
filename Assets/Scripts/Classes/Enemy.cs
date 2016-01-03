@@ -71,8 +71,7 @@ public class Enemy : Actor {
 
     void Attack() {
 
-        StartCoroutine(JumpAttackTimed());
-        
+        StartCoroutine(JumpAttackTimed());        
     
     }
 	

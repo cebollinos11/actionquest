@@ -172,11 +172,13 @@ MonoBehaviour:
   soundGetHit: {fileID: 0}
   soundSteps: {fileID: 0}
   stepsFreq: .699999988
+  particleOnHit: {fileID: 0}
   warCrySound: {fileID: 8300000, guid: 0b220f29e541aaa46bca959ebf77fd08, type: 3}
+  noMelee: 0
   meleeDash: 15
-  currentMode: 0
   TargetPosition: {x: 0, y: 0, z: 0}
   attackFreq: 2
+  Player: {fileID: 0}
   soundAttack: {fileID: 0}
 --- !u!135 &13509786
 SphereCollider:
@@ -213,7 +215,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300610, guid: 86cb6424fc85f334c82cd354bf3c84fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
@@ -231,6 +233,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: meleeDash
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 86cb6424fc85f334c82cd354bf3c84fd
-timeCreated: 1451585501
+timeCreated: 1451825282
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -8414,8 +8414,8 @@ TextureImporter:
         y: 1024
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: spriteSheet_673
       rect:

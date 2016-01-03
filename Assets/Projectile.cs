@@ -5,21 +5,26 @@ public class Projectile : MonoBehaviour {
 
 
     public float speed;
-    public float ttl;
-    public Vector3 direction;
+    
+    public float range;
+    float distanceTravelled;
+    [HideInInspector]public Vector3 direction;
+    [HideInInspector]
     public string tag;
-    public GameObject ParticleHit;
 
-    public float gravity;
-    public float dropPercent;
+    float directionVariation = 0.1f;
+
+    float currentTTL;
+    float gravity = -10f;
+    
 
     bool goDown;
 
-    float currentTTL;
-
+   
     public GameObject particleOnHitWall;
 	// Use this for initialization
 
+    [HideInInspector]
     public SpriteHandler sH;
 
     void Awake() {
@@ -27,11 +32,17 @@ public class Projectile : MonoBehaviour {
         sH = GetComponentInChildren<SpriteHandler>();
     }
 
-    void OnEnable() {
+    
 
-        ttl += Random.Range(0f, ttl * 0.1f);        
-        currentTTL = ttl;
-        
+    public void InitProjectile(Vector3 projectileDirection,string ownerTag) {
+
+        direction = projectileDirection;
+        tag = ownerTag;
+
+        distanceTravelled = Random.Range(-0.5f, 0.5f);
+        currentTTL = 0;
+        direction += new Vector3(Random.Range(-directionVariation, directionVariation), 0, Random.Range(-directionVariation, directionVariation));
+    
     }
 
    
@@ -39,10 +50,12 @@ public class Projectile : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        distanceTravelled += speed * Time.deltaTime;
         transform.Translate(direction * speed*Time.deltaTime);
+        Debug.Log(direction);
 
         currentTTL-=Time.deltaTime;
-        if (currentTTL < -ttl*2)
+        if (currentTTL < -15f)
         {
             Kill();
         }
@@ -54,7 +67,8 @@ public class Projectile : MonoBehaviour {
         }
 
         else { 
-            if(currentTTL < dropPercent*ttl){
+            //if(currentTTL < dropPercent*ttl){
+            if(distanceTravelled>range){
                 goDown = true;
             }
         }
@@ -85,12 +99,12 @@ public class Projectile : MonoBehaviour {
             Actor goActor = go.GetComponent<Actor>();
             goActor.TakeDamage(1, direction);
             goActor.BlockMove(0.2f);
-            Instantiate(ParticleHit, transform.position, Quaternion.identity);
+            
             Kill();
         }
 
         if (go.tag == "Floor") {
-            Instantiate(particleOnHitWall,transform.position,Quaternion.identity);
+            Instantiate(particleOnHitWall,transform.position+Vector3.up,Quaternion.identity);
             AudioManager.PlayClip(AudioClipsType.thump);
             Kill();
         }
@@ -101,6 +115,7 @@ public class Projectile : MonoBehaviour {
 
     void Kill()
     {
+       
         Destroy(this.gameObject);
     }
 }

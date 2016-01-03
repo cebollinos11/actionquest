@@ -179,12 +179,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
-  ttl: .5
+  range: 30
   direction: {x: 0, y: 0, z: 1}
   tag: 
-  ParticleHit: {fileID: 155264, guid: 8c3cb41a3a2d4b74499028d4e0b12812, type: 2}
-  gravity: 0
-  dropPercent: 0
   particleOnHitWall: {fileID: 144784, guid: 2ad494a405295c64a9d4adf25d67c20c, type: 2}
   sH: {fileID: 0}
 --- !u!114 &11460058
@@ -358,6 +355,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: speed
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: range
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
