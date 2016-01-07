@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class LevelManager : Singleton<LevelManager> {
 
     public bool alreadyInitialized;
-    int currentLevel;
+    public int currentLevel;
     [HideInInspector]public GameObject Player;
+
+    [HideInInspector]public List<GameObject> EnemyDB;
 
 
     static void Init() {
@@ -13,7 +16,7 @@ public class LevelManager : Singleton<LevelManager> {
         Instance.alreadyInitialized = true;
         DontDestroyOnLoad(Instance.transform.gameObject);
         Debug.Log("Initializing levelmanager");
-        Instance.currentLevel = 0;
+        Instance.currentLevel = 1;
 
 
 
@@ -25,6 +28,17 @@ public class LevelManager : Singleton<LevelManager> {
         GameObject gameController = (GameObject)Resources.Load("Prefabs/GameController");
         GameObject gcon = (GameObject)Instantiate(gameController, Vector3.zero, Quaternion.identity);
         gcon.transform.parent = Instance.transform;
+
+        //init enemies
+        //Debug.Log("start loading");
+        //Instance.EnemyDB = (GameObject[])Resources.LoadAll("Prefabs/Enemies",typeof(GameObject));
+        //Debug.Log(Instance.EnemyDB);
+
+        foreach (GameObject g in Resources.LoadAll("Prefabs/Enemies", typeof(GameObject)))
+        {
+            Debug.Log("prefab found: " + g.name);
+            Instance.EnemyDB.Add(g);
+        }
 
         Instance.LoadLevel();
         
@@ -82,6 +96,7 @@ public class LevelManager : Singleton<LevelManager> {
     public static void FinishLevel() {
 
         Debug.Log("Go to next level!");
+        Instance.currentLevel++;
         SavePlayer();        
         //Camera.main.GetComponent<cameraHandler>().ZoomIn();
         Application.LoadLevel("game");

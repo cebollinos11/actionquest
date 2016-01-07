@@ -35,11 +35,20 @@ public class doorScript : MonoBehaviour {
 
         if (opened && insideSphere && Input.GetButtonDown("Start"))
         {
-            LevelManager.FinishLevel();
+            
             enabled = false;
+            StartCoroutine(TransitionToNextLevel());
         }
 	
 	}
+
+    IEnumerator TransitionToNextLevel() {
+
+        Camera.main.GetComponent<cameraHandler>().ZoomIn();
+        yield return new WaitForSeconds(1f);
+        LevelManager.FinishLevel();
+        Camera.main.GetComponent<cameraHandler>().ZoomOut();
+    }
 
     public void Open() {
 
