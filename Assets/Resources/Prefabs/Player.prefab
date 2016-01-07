@@ -282,17 +282,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 5
   speed: 300
-  maxSpeed: 15
-  jumpPower: 40
+  maxSpeed: 12
+  jumpPower: 80
   isTouchingFloor: 0
   rB: {fileID: 0}
   sH: {fileID: 0}
   soundGetHit: {fileID: 8300000, guid: a93b1fa8d98cdfa41a319b6ae15269ba, type: 3}
   soundSteps: {fileID: 8300000, guid: ae2510032d5a1de41a013cb1ea359d58, type: 3}
   stepsFreq: .300000012
+  particleOnHit: {fileID: 0}
   basicSpell: {fileID: 151994, guid: dcebb7b17d86efd4cb94c2cb86e49c2e, type: 2}
   specialSpell: {fileID: 151994, guid: 7a330c8eb74200f488489a8f223bf340, type: 2}
   lastDirection: {x: 0, y: 0, z: 0}
+  EquippedWeapon: {fileID: 166512, guid: db29038b872b16a42a9b314a296e93c1, type: 2}
 --- !u!135 &13537504
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -354,7 +356,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300132, guid: 86cb6424fc85f334c82cd354bf3c84fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000

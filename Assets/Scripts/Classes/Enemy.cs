@@ -27,15 +27,16 @@ public class Enemy : Actor {
 
     GameObject loot;
 
+
+    
+
 	// Use this for initialization
 	public void Start () {
         base.Start();
         Debug.Log(gameObject.name + " executes start " );
         Player = GameObject.FindGameObjectWithTag("Friendly");
         TargetPosition = transform.position;
-        loot = (GameObject)Resources.Load("Prefabs/Loot/Money");
-
-        
+        loot = (GameObject)Resources.Load("Prefabs/Loot/Money");        
 	}
 
 
@@ -141,6 +142,8 @@ public class Enemy : Actor {
 
 
         Debug.Log(rB.velocity);
+
+        currentMode = EnemyMode.aggro;
     
     }
 

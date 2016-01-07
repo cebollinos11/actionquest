@@ -7,15 +7,18 @@ public class PlayerController : SpellCaster
     
     float _h, _v;
     public Vector3 lastDirection;
+    public GameObject EquippedWeapon;
 
     SpellAimer spellAimer;
 
+    Projectile equippedProjectile;
     
 
     void Start() {
         base.Start();
         spellAimer = GetComponentInChildren<SpellAimer>();
         lastDirection = Vector3.right;
+        equippedProjectile = EquippedWeapon.GetComponent<Projectile>();
     
     }
 	
@@ -25,9 +28,7 @@ public class PlayerController : SpellCaster
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-
             TakeDamage(0, Vector3.zero);
-
         }
 
         float h = Input.GetAxis("Horizontal");
@@ -39,34 +40,32 @@ public class PlayerController : SpellCaster
             Move(lastDirection);
             _h = h;
             _v = v;
-
             lastDirection.Normalize();
         }
 
         if (Input.GetButtonDown("AttackN"))
         {
-            CastSpell(loadedBasicSpell, Vector3.forward);            
+            Throw(Vector3.forward);            
         }
 
         if (Input.GetButtonDown("AttackS"))
         {
-            CastSpell(loadedBasicSpell, Vector3.back);
+            Throw(Vector3.back);
         }
 
         if (Input.GetButtonDown("AttackW"))
         {
-            CastSpell(loadedBasicSpell, Vector3.left);
+            Throw(Vector3.left);
         }
 
         if (Input.GetButtonDown("AttackE"))
         {
-            CastSpell(loadedBasicSpell, Vector3.right);         
+            Throw(Vector3.right);         
         }
 
         if (Input.GetButtonDown("Jump"))
         {
             //Jump();
-
             Push(new Vector3(h, 0f, v),15,0.4f);
             AudioManager.PlayClip(AudioClipsType.dash);
         }
@@ -109,7 +108,6 @@ public class PlayerController : SpellCaster
 
         else {
             spellAimer.turnOn(false);
-
             
         }
 
@@ -128,6 +126,19 @@ public class PlayerController : SpellCaster
     {
         base.TakeDamage(dmg, dir);
         ActionController.CamShake();
+    }
+
+
+
+    void Throw(Vector3 direction) {
+
+
+        sH.StartMoveAnimation(SpriteHandler.AnimationType.attack);
+        magicCharge = 0f;
+        GameObject go = (GameObject)Instantiate(EquippedWeapon, transform.position + Vector3.up, Quaternion.identity);
+        Projectile pj = go.GetComponent<Projectile>();
+        pj.InitProjectile(direction, gameObject.tag);
+        AudioManager.PlaySpecific(equippedProjectile.soundOnThrow);    
     }
 
     

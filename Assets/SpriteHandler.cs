@@ -108,8 +108,7 @@ public class SpriteHandler : MonoBehaviour {
             targetScale = new Vector3(origScale.x * (1f - MoveAnimIntensity) , origScale.y * (1f + MoveAnimIntensity * 2), origScale.z);
 
         else if (aType == AnimationType.attack)
-            targetScale = new Vector3(origScale.x * (1f + MoveAnimIntensity * 2) , origScale.y, origScale.z);
-            
+            targetScale = new Vector3(origScale.x * (1f + MoveAnimIntensity * 2) , origScale.y*0.9f, origScale.z);           
 
         do {
 

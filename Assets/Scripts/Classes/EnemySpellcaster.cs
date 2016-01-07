@@ -6,6 +6,7 @@ public class EnemySpellcaster : Enemy {
     public GameObject knownSpell;
     public float spellFrequency = 4f;
     float currentSpellFreq;
+    public float spellRange = 20f;
 
 	// Use this for initialization
 	void Start () {
@@ -34,8 +35,9 @@ public class EnemySpellcaster : Enemy {
         if (currentSpellFreq < 0)
         {
             currentSpellFreq = spellFrequency;
-            if (currentPositionDifferenceToTarget.magnitude < 200)
+            if (currentPositionDifferenceToTarget.magnitude < spellRange)
             {
+                Debug.Log("sent from " + currentPositionDifferenceToTarget.magnitude);
                 CastSpell();
             }
         }

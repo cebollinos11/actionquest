@@ -45,6 +45,7 @@ GameObject:
   - 54: {fileID: 5419620}
   - 135: {fileID: 13509786}
   - 114: {fileID: 11467066}
+  - 114: {fileID: 11433050}
   m_Layer: 0
   m_Name: Rat
   m_TagString: Enemy
@@ -83,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.7999992, y: 9.39999962, z: 1.70200002}
+  m_LocalPosition: {x: 16.3999996, y: 12.5, z: -10.5396175}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 408868}
@@ -151,6 +152,21 @@ MonoBehaviour:
   MoveAnimIntensity: .200000003
   flashTime: .5
   spriteOrientation: 1
+--- !u!114 &11433050
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d47718065e1dd645ae2ac0d19d4f47a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  period: 5
+  percentage: .150000006
+  multiplier: 4
+  count: 0
 --- !u!114 &11467066
 MonoBehaviour:
   m_ObjectHideFlags: 1

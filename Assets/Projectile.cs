@@ -11,6 +11,7 @@ public class Projectile : MonoBehaviour {
     [HideInInspector]public Vector3 direction;
     [HideInInspector]
     public string tag;
+    public AudioClip soundOnThrow;
 
     float directionVariation = 0.1f;
 
@@ -52,7 +53,7 @@ public class Projectile : MonoBehaviour {
 
         distanceTravelled += speed * Time.deltaTime;
         transform.Translate(direction * speed*Time.deltaTime);
-        Debug.Log(direction);
+        
 
         currentTTL-=Time.deltaTime;
         if (currentTTL < -15f)
