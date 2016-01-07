@@ -51,6 +51,8 @@ public class Actor : MonoBehaviour {
 
     public void Start() {
 
+        
+
         currHP = maxHP;
 
         rB = GetComponent<Rigidbody>();
@@ -59,6 +61,9 @@ public class Actor : MonoBehaviour {
         gameObject.AddComponent<AudioSource>();
 
         particleOnHit = (GameObject)Resources.Load("Prefabs/Particles/ParticleOnHitDamage");
+
+
+        
        
 
        
@@ -162,15 +167,20 @@ public class Actor : MonoBehaviour {
         
         //check floor
         if (col.gameObject.tag == "Floor") {
-            sH.StartMoveAnimation(SpriteHandler.AnimationType.walk);
+            
+            if(sH!=null)
+                sH.StartMoveAnimation(SpriteHandler.AnimationType.walk);
             isTouchingFloor ++;
 
 
-            Debug.Log(gameObject.name + " " + rB.velocity.y);
-            if (rB.velocity.y < 0f && transform.lossyScale.x > 2)
+            if (rB != null)
             {
-                ActionController.CamShake();
+                if (rB.velocity.y < 0f && transform.lossyScale.x > 2)
+                {
+                    ActionController.CamShake();
+                }
             }
+            
         
         }
 

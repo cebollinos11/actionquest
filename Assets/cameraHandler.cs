@@ -19,9 +19,19 @@ public class cameraHandler : MonoBehaviour {
         cam = GetComponent<Camera>();
         originalSize = cam.orthographicSize;
         shakeFrequency = 1 / shakeDuration;
+        ZoomOut();
 	}
 
- 
+
+
+    public void ZoomOut() {
+        StartCoroutine(FocusToOutside());
+    }
+
+    public void ZoomIn()
+    {
+        StartCoroutine(FocusToInside());
+    }
 
     public void ShakeCam() {
         StartCoroutine(ShakeIT());
@@ -71,5 +81,27 @@ public class cameraHandler : MonoBehaviour {
         
     }
 
+
+    IEnumerator FocusToInside()
+    {
+
+       
+        float targetSize = 2f;
+        yVelocity = 0.0F;
+        //cam.orthographicSize = 2;
+        do
+        {
+            
+            float newPosition = Mathf.SmoothDamp(cam.orthographicSize, targetSize, ref yVelocity, zoomTime);
+            cam.orthographicSize = newPosition;
+            
+            yield return new WaitForEndOfFrame();
+        }
+
+        while (cam.orthographicSize - targetSize > 0.1f);
+
+        Debug.Log(cam.orthographicSize - targetSize);
+
+    }
 
 }

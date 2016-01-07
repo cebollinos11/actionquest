@@ -233,7 +233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeStrength: .300000012
   shakeDuration: .200000003
-  zoomTime: 2
+  zoomTime: .5
 --- !u!124 &12454556
 Behaviour:
   m_ObjectHideFlags: 1
@@ -247,7 +247,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: zoomTime
+      value: .5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 104878}

@@ -12,6 +12,10 @@ public class cameraFollow : MonoBehaviour {
     void Start()
     {
         origZ = transform.position.z;
+        if (target == null)
+        {
+            target = LevelManager.Instance.Player.transform;
+        }
     }
     void Update()
     {

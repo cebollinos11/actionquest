@@ -110,7 +110,7 @@ public class Projectile : MonoBehaviour {
             Kill();
         }
 
-        Debug.Log(go.tag);
+        
             
     }
 
