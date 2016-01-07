@@ -9,6 +9,8 @@ public class LevelManager : Singleton<LevelManager> {
     [HideInInspector]public GameObject Player;
 
     [HideInInspector]public List<GameObject> EnemyDB;
+    [HideInInspector]
+    public List<GameObject> RoomDB;
 
 
     static void Init() {
@@ -38,6 +40,12 @@ public class LevelManager : Singleton<LevelManager> {
         {
             Debug.Log("prefab found: " + g.name);
             Instance.EnemyDB.Add(g);
+        }
+
+        foreach (GameObject g in Resources.LoadAll("Prefabs/Rooms", typeof(GameObject)))
+        {
+            Debug.Log("prefab found: " + g.name);
+            Instance.RoomDB.Add(g);
         }
 
         Instance.LoadLevel();
@@ -75,7 +83,9 @@ public class LevelManager : Singleton<LevelManager> {
 
 
         Debug.Log("Loading level " + currentLevel.ToString());
-        GameObject map = (GameObject)Resources.Load("Prefabs/Rooms/Map");
+        //GameObject map = (GameObject)Resources.Load("Prefabs/Rooms/Map");
+
+        GameObject map = Instance.RoomDB[Random.Range(0, Instance.RoomDB.Count)];
         Instantiate(map, Vector3.zero, Quaternion.Euler(0, -45, 0));
         Debug.Log("Finish loading");
         

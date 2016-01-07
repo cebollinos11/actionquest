@@ -40,7 +40,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Magic Dagger
-  toInstantiate: {fileID: 166512, guid: db29038b872b16a42a9b314a296e93c1, type: 2}
+  toInstantiate: {fileID: 166512, guid: c86dd0e3363474f4f881485d0cca2cae, type: 2}
   soundOnCast: {fileID: 8300000, guid: 9fbf3d3bfee716044bac80102103f6c3, type: 3}
 --- !u!1001 &100100000
 Prefab:
@@ -52,7 +52,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: toInstantiate
       value: 
-      objectReference: {fileID: 166512, guid: db29038b872b16a42a9b314a296e93c1, type: 2}
+      objectReference: {fileID: 166512, guid: c86dd0e3363474f4f881485d0cca2cae, type: 2}
     - target: {fileID: 0}
       propertyPath: name
       value: Magic Dagger

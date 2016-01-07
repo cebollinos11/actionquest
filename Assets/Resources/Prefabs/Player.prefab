@@ -294,7 +294,7 @@ MonoBehaviour:
   basicSpell: {fileID: 151994, guid: dcebb7b17d86efd4cb94c2cb86e49c2e, type: 2}
   specialSpell: {fileID: 151994, guid: 7a330c8eb74200f488489a8f223bf340, type: 2}
   lastDirection: {x: 0, y: 0, z: 0}
-  EquippedWeapon: {fileID: 166512, guid: db29038b872b16a42a9b314a296e93c1, type: 2}
+  EquippedWeapon: {fileID: 166512, guid: 42ba932191145374db39ee32212521ee, type: 2}
 --- !u!135 &13537504
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -383,6 +383,10 @@ Prefab:
       propertyPath: equippedSpell
       value: 
       objectReference: {fileID: 151994, guid: dcebb7b17d86efd4cb94c2cb86e49c2e, type: 2}
+    - target: {fileID: 0}
+      propertyPath: EquippedWeapon
+      value: 
+      objectReference: {fileID: 166512, guid: 42ba932191145374db39ee32212521ee, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 139314}

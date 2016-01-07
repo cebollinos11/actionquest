@@ -5,8 +5,8 @@ public class MaxSpeedDoubler : MonoBehaviour {
 
     Enemy enemyScript;
     bool isDoubled;
-    public float period = 10f;
-    public float percentage = 0.25f;
+    public float period = 5f;
+    public float percentage = 0.15f;
 
     public int multiplier = 4;
 
