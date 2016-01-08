@@ -12,6 +12,9 @@ public class LevelManager : Singleton<LevelManager> {
     [HideInInspector]
     public List<GameObject> RoomDB;
 
+    [HideInInspector]
+    public BattleUI bui;
+
 
     static void Init() {
 
@@ -30,6 +33,16 @@ public class LevelManager : Singleton<LevelManager> {
         GameObject gameController = (GameObject)Resources.Load("Prefabs/GameController");
         GameObject gcon = (GameObject)Instantiate(gameController, Vector3.zero, Quaternion.identity);
         gcon.transform.parent = Instance.transform;
+
+        GameObject battleUI = (GameObject)Resources.Load("Prefabs/BattleUI");
+        GameObject bUI = (GameObject)Instantiate(battleUI, Vector3.zero, Quaternion.identity);
+        bUI.transform.parent = Instance.transform;
+
+        Instance.bui = bUI.GetComponent<BattleUI>();
+
+        
+
+
 
         //init enemies
         //Debug.Log("start loading");
@@ -86,7 +99,10 @@ public class LevelManager : Singleton<LevelManager> {
         //GameObject map = (GameObject)Resources.Load("Prefabs/Rooms/Map");
 
         GameObject map = Instance.RoomDB[Random.Range(0, Instance.RoomDB.Count)];
-        Instantiate(map, Vector3.zero, Quaternion.Euler(0, -45, 0));
+        Instantiate(map, Vector3.zero, Quaternion.Euler(0, 0, 0));
+
+        
+
         Debug.Log("Finish loading");
         
         

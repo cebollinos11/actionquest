@@ -4,7 +4,7 @@ using System.Collections;
 public class Actor : MonoBehaviour {
 
     public int maxHP = 5;
-    int currHP;
+    [HideInInspector]public int currHP;
 
     public int speed = 100;
     public int maxSpeed = 10;

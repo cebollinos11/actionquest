@@ -37,6 +37,24 @@ public class cameraFollow : MonoBehaviour {
 
         //lerp
         transform.position = Vector3.Lerp(transform.position, tpos, smoothTime);
+
+      
+
+        if (Input.GetKeyDown(KeyCode.I)) {
+
+            offset = new Vector3(0, 40, -40);
+            Camera.main.fieldOfView = 30f;
+            
+        }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+
+            offset = new Vector3(0, 25, -25);
+            Camera.main.fieldOfView = 60f;
+
+        }
+    
         
 
 

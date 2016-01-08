@@ -13,6 +13,7 @@ public class RoomManager : MonoBehaviour {
 
         spawner = Resources.Load("Prefabs/EnemySpawner") as GameObject;
         PlaceObjects();
+        LevelManager.Instance.bui.UpdatePlayer();
 	
 	}
 

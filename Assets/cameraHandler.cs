@@ -22,6 +22,8 @@ public class cameraHandler : MonoBehaviour {
         ZoomOut();
 	}
 
+    
+
 
 
     public void ZoomOut() {

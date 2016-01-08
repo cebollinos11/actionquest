@@ -19,6 +19,7 @@ public class PlayerController : SpellCaster
         spellAimer = GetComponentInChildren<SpellAimer>();
         lastDirection = Vector3.right;
         equippedProjectile = EquippedWeapon.GetComponent<Projectile>();
+        
     
     }
 	
@@ -66,8 +67,8 @@ public class PlayerController : SpellCaster
         if (Input.GetButtonDown("Jump"))
         {
             //Jump();
-            Push(new Vector3(h, 0f, v),15,0.4f);
-            AudioManager.PlayClip(AudioClipsType.dash);
+            //Push(new Vector3(h, 0f, v),15,0.4f);
+            //AudioManager.PlayClip(AudioClipsType.dash);
         }
 
         
@@ -126,6 +127,7 @@ public class PlayerController : SpellCaster
     {
         base.TakeDamage(dmg, dir);
         ActionController.CamShake();
+        LevelManager.Instance.bui.UpdatePlayer();
     }
 
 
