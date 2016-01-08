@@ -99,7 +99,7 @@ public class LevelManager : Singleton<LevelManager> {
         //GameObject map = (GameObject)Resources.Load("Prefabs/Rooms/Map");
 
         GameObject map = Instance.RoomDB[Random.Range(0, Instance.RoomDB.Count)];
-        Instantiate(map, Vector3.zero, Quaternion.Euler(0, 0, 0));
+        Instantiate(map, Vector3.zero, Quaternion.Euler(0, Random.Range(0,2)*(-45), 0));
 
         
 

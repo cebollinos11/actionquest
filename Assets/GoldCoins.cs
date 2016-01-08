@@ -23,6 +23,8 @@ public class GoldCoins : MonoBehaviour {
             AudioManager.PlaySpecific(moneySound);
             Instantiate(particlePickUp, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
+            col.gameObject.GetComponent<PlayerController>().coins++;
+            LevelManager.Instance.bui.UpdatePlayer();
         }
     }
 }

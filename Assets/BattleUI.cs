@@ -7,6 +7,8 @@ public class BattleUI : MonoBehaviour {
     PlayerController pc;
     [SerializeField]Text playerHP;
     [SerializeField]
+    Text coins;
+    [SerializeField]
     Image equippedWeap;
 
 	// Use this for initialization
@@ -18,6 +20,7 @@ public class BattleUI : MonoBehaviour {
 
         playerHP.text = pc.currHP.ToString();
         //equippedWeap.sprite = pc.EquippedWeapon.GetComponent<Projectile>().sH.gameObject.GetComponent<SpriteRenderer>().sprite;
+        coins.text = pc.coins.ToString();
     
     }
 	

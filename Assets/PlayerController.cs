@@ -12,6 +12,8 @@ public class PlayerController : SpellCaster
     SpellAimer spellAimer;
 
     Projectile equippedProjectile;
+
+    [HideInInspector]public int coins;
     
 
     void Start() {
