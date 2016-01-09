@@ -40,14 +40,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alreadyInitialized: 0
+  currentLevel: 0
   Player: {fileID: 0}
+  EnemyDB: []
+  BossDB: []
+  RoomDB: []
+  LootDB: []
+  bui: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: testing
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 174304}

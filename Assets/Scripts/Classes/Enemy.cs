@@ -8,10 +8,10 @@ public class Enemy : Actor {
         wander,aggro
     }
 
-    [SerializeField] AudioClip warCrySound;
+    public AudioClip warCrySound;
     public bool noMelee;
     public float meleeDash = 10f;
-    protected EnemyMode currentMode = EnemyMode.wander;
+    public EnemyMode currentMode = EnemyMode.wander;
     public Vector3 TargetPosition;
     float wanderRange = 10f;
     float wanderFrequencyChange = 3f;
@@ -25,7 +25,7 @@ public class Enemy : Actor {
 
     protected Vector3 currentPositionDifferenceToTarget;
 
-    GameObject loot;
+    protected GameObject loot;
 
 
     
@@ -159,6 +159,8 @@ public class Enemy : Actor {
         base.Die();
         AudioManager.PlayClip(AudioClipsType.enemyDead);
         Instantiate(loot, transform.position, Quaternion.identity);
+
+        
     }
 
     

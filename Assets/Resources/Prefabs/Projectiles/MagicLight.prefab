@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb5a7b7b907bc5e45b15eee55417a73e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
+  speed: 20
   range: 30
   direction: {x: 0, y: 0, z: 1}
   tag: 
@@ -371,7 +371,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: speed
-      value: 40
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: range

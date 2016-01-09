@@ -8,6 +8,8 @@ public class RoomManager : MonoBehaviour {
 
     bool isBossRoom;
 
+    public doorScript Door;
+
     GameObject spawner;
 
 	// Use this for initialization
@@ -23,6 +25,13 @@ public class RoomManager : MonoBehaviour {
     public void Init(bool isboss)
     {
         isBossRoom = isboss;
+    }
+
+
+    public void CheckForEnemiesAlive() {
+
+        Object enemiesLeft = FindObjectOfType(typeof(Enemy));
+        Debug.Log(enemiesLeft);
     }
 
     public void PlaceObjects() {

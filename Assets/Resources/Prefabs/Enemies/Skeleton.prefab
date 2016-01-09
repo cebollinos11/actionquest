@@ -45,6 +45,7 @@ GameObject:
   - 54: {fileID: 5419620}
   - 135: {fileID: 13509786}
   - 114: {fileID: 11467066}
+  - 114: {fileID: 11469086}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Enemy
@@ -163,6 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 5
+  currHP: 0
   speed: 100
   maxSpeed: 5
   jumpPower: 5
@@ -176,10 +178,26 @@ MonoBehaviour:
   warCrySound: {fileID: 8300000, guid: 4d08cd0db9e28604eb47a14b7638c064, type: 3}
   noMelee: 0
   meleeDash: 33
+  currentMode: 0
   TargetPosition: {x: 0, y: 0, z: 0}
   attackFreq: 2
   Player: {fileID: 0}
   soundAttack: {fileID: 0}
+--- !u!114 &11469086
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d47718065e1dd645ae2ac0d19d4f47a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  period: 5
+  percentage: .150000006
+  multiplier: 4
+  count: 0
 --- !u!135 &13509786
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 public class LevelManager : Singleton<LevelManager> {
 
+    
+
+
     public bool alreadyInitialized;
     public int currentLevel;
     [HideInInspector]public GameObject Player;
@@ -18,6 +21,8 @@ public class LevelManager : Singleton<LevelManager> {
 
     [HideInInspector]
     public BattleUI bui;
+
+    public RoomManager currentRoom;
 
 
     static void Init() {
@@ -79,7 +84,9 @@ public class LevelManager : Singleton<LevelManager> {
             Instance.RoomDB.Add(g);
         }
 
-        Instance.LoadLevel();
+        
+            Instance.LoadLevel();
+        
         
     }
 
@@ -115,6 +122,13 @@ public class LevelManager : Singleton<LevelManager> {
 	
 	}
 
+    public void LoadTestLevel() {
+
+        GameObject map = (GameObject)Resources.Load("Prefabs/TestRoom");
+        GameObject instantiatedMap = (GameObject)Instantiate(map, Vector3.zero, Quaternion.Euler(0, Random.Range(0, 2) * (-45), 0));
+        
+    }
+
     public void LoadLevel()
     {
 
@@ -125,7 +139,11 @@ public class LevelManager : Singleton<LevelManager> {
 
         GameObject map = Instance.RoomDB[Random.Range(0, Instance.RoomDB.Count)];
         GameObject instantiatedMap = (GameObject)Instantiate(map, Vector3.zero, Quaternion.Euler(0, Random.Range(0,2)*(-45), 0));
-        instantiatedMap.GetComponent<RoomManager>().Init(true);//currentLevel%3==0);
+        instantiatedMap.GetComponent<RoomManager>().Init(currentLevel%3==0);
+        instantiatedMap.GetComponent<RoomManager>().Init(true);
+
+        currentRoom = instantiatedMap.GetComponent<RoomManager>();
+
 
         
 

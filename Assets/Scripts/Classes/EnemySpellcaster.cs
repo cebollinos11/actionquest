@@ -20,14 +20,8 @@ public class EnemySpellcaster : Enemy {
 
         if (currentMode == EnemyMode.aggro)
         {
-
-
             HandleSpells();
-
-        }
-
-        
-	
+        }        	
 	}
 
     void HandleSpells() {
@@ -49,8 +43,23 @@ public class EnemySpellcaster : Enemy {
 
     void CastSpell() {
 
-        knownSpell.GetComponent<Spell>().Cast(this.gameObject,Vector3.Scale((Player.transform.position-transform.position),new Vector3(1,0,1)).normalized);
-        BlockMove(0.5f);
+
+        StartCoroutine(CastSpellRoutine());
+        
     
     }
+
+
+    IEnumerator CastSpellRoutine()
+    {
+        float castTime = 0.5f;
+        sH.Flash(Color.yellow, 1);
+        BlockMove(castTime);
+        yield return new WaitForSeconds(castTime);
+        knownSpell.GetComponent<Spell>().Cast(this.gameObject, Vector3.Scale((Player.transform.position - transform.position), new Vector3(1, 0, 1)).normalized);
+        BlockMove(castTime);
+        
+    }
+
+
 }

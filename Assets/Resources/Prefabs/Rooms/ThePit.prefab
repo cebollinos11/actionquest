@@ -1575,6 +1575,7 @@ MonoBehaviour:
   playerSpawn: {fileID: 183230}
   enemySpawners:
   - {fileID: 120648}
+  Door: {fileID: 11461458}
 --- !u!114 &11459438
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1758,7 +1759,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: Door
+      value: 
+      objectReference: {fileID: 11461458}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 116180}

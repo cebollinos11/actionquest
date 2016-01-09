@@ -162,8 +162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e53f26573f08f7a4baa252258348542b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUpSound: {fileID: 8300000, guid: 496985ba3079b1941aab73cf98e0e209, type: 3}
-  particlePickUp: {fileID: 144784, guid: 2ad494a405295c64a9d4adf25d67c20c, type: 2}
+  pickUpSound: {fileID: 8300000, guid: 7738e123cf40b534287564a290db6ac5, type: 3}
+  particlePickUp: {fileID: 144784, guid: 570a2ff9291150b43aded1a19105e526, type: 2}
 --- !u!135 &13513500
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -212,11 +212,11 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: pickUpSound
       value: 
-      objectReference: {fileID: 8300000, guid: 496985ba3079b1941aab73cf98e0e209, type: 3}
+      objectReference: {fileID: 8300000, guid: 7738e123cf40b534287564a290db6ac5, type: 3}
     - target: {fileID: 0}
       propertyPath: particlePickUp
       value: 
-      objectReference: {fileID: 144784, guid: 2ad494a405295c64a9d4adf25d67c20c, type: 2}
+      objectReference: {fileID: 144784, guid: 570a2ff9291150b43aded1a19105e526, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 141974}

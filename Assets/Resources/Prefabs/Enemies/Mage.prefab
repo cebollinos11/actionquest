@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 5
+  currHP: 0
   speed: 100
   maxSpeed: 10
   jumpPower: 10
@@ -173,15 +174,17 @@ MonoBehaviour:
   soundSteps: {fileID: 0}
   stepsFreq: .699999988
   particleOnHit: {fileID: 0}
-  warCrySound: {fileID: 0}
+  warCrySound: {fileID: 8300000, guid: 6771acff9a4a4cb4ea9f42960bac06b5, type: 3}
   noMelee: 0
   meleeDash: 10
+  currentMode: 0
   TargetPosition: {x: 0, y: 0, z: 0}
   attackFreq: 2
   Player: {fileID: 0}
   soundAttack: {fileID: 0}
   knownSpell: {fileID: 151994, guid: dcebb7b17d86efd4cb94c2cb86e49c2e, type: 2}
   spellFrequency: 1
+  spellRange: 20
 --- !u!135 &13524470
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -235,6 +238,10 @@ Prefab:
       propertyPath: m_SortingOrder
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: warCrySound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6771acff9a4a4cb4ea9f42960bac06b5, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 136230}

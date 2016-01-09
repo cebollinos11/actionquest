@@ -6,12 +6,22 @@ public class ItemPickUp : MonoBehaviour {
 
     public AudioClip pickUpSound;
     public GameObject particlePickUp;
+    float pickUpOffsetTime = 1f;
+    bool canBePickedUp;
 
 	// Use this for initialization
 	void Start () {
+        StartCoroutine(WaitForEnablePickUp());
         pushUp();       
-	
+	    
 	}
+
+    IEnumerator WaitForEnablePickUp()
+    {
+
+        yield return new WaitForSeconds(pickUpOffsetTime);
+        canBePickedUp = true;
+    }
 
     void pushUp()
     {
@@ -21,10 +31,8 @@ public class ItemPickUp : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Friendly")
+        if (canBePickedUp && col.gameObject.tag == "Friendly")
         {
-
-
             OnPickUp(col);
             LevelManager.Instance.bui.UpdatePlayer();
         }

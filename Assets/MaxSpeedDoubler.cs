@@ -47,6 +47,12 @@ public class MaxSpeedDoubler : MonoBehaviour {
         if (direction)
         {
             enemyScript.maxSpeed *= multiplier;
+            
+            if (enemyScript.currentMode == Enemy.EnemyMode.aggro)
+            {
+                enemyScript.sH.Flash(Color.red, 1);
+                AudioManager.PlaySpecific(enemyScript.warCrySound);
+            }
         }
 
         else {

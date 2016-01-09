@@ -158,14 +158,14 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109542}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d47718065e1dd645ae2ac0d19d4f47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   period: 5
-  percentage: .150000006
-  multiplier: 6
+  percentage: .5
+  multiplier: 4
   count: 0
 --- !u!114 &11477326
 MonoBehaviour:
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84c4488fcdfb3e47b2a909378c1d980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 150
+  maxHP: 1
   currHP: 0
   speed: 100
   maxSpeed: 10
@@ -190,15 +190,16 @@ MonoBehaviour:
   soundSteps: {fileID: 0}
   stepsFreq: .699999988
   particleOnHit: {fileID: 0}
-  warCrySound: {fileID: 0}
+  warCrySound: {fileID: 8300000, guid: 643eeb038acdeed4eb17a1c9c44f09ad, type: 3}
   noMelee: 0
-  meleeDash: 10
+  meleeDash: 35
+  currentMode: 0
   TargetPosition: {x: 0, y: 0, z: 0}
   attackFreq: 2
   Player: {fileID: 0}
   soundAttack: {fileID: 0}
   knownSpell: {fileID: 151994, guid: 7a330c8eb74200f488489a8f223bf340, type: 2}
-  spellFrequency: 4
+  spellFrequency: 10
   spellRange: 20
 --- !u!135 &13516784
 SphereCollider:
@@ -259,11 +260,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxHP
-      value: 150
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: multiplier
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: jumpPower
@@ -272,7 +273,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: warCrySound
       value: 
-      objectReference: {fileID: 8300000, guid: def0882fcf1921741a0e08f2f86e1286, type: 3}
+      objectReference: {fileID: 8300000, guid: 643eeb038acdeed4eb17a1c9c44f09ad, type: 3}
     - target: {fileID: 0}
       propertyPath: attackFreq
       value: 1
@@ -281,6 +282,22 @@ Prefab:
       propertyPath: knownSpell
       value: 
       objectReference: {fileID: 151994, guid: 7a330c8eb74200f488489a8f223bf340, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: percentage
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellFrequency
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: meleeDash
+      value: 35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 109542}
