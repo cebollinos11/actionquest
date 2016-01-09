@@ -140,7 +140,7 @@ public class LevelManager : Singleton<LevelManager> {
         GameObject map = Instance.RoomDB[Random.Range(0, Instance.RoomDB.Count)];
         GameObject instantiatedMap = (GameObject)Instantiate(map, Vector3.zero, Quaternion.Euler(0, Random.Range(0,2)*(-45), 0));
         instantiatedMap.GetComponent<RoomManager>().Init(currentLevel%3==0);
-        instantiatedMap.GetComponent<RoomManager>().Init(true);
+        //instantiatedMap.GetComponent<RoomManager>().Init(true);
 
         currentRoom = instantiatedMap.GetComponent<RoomManager>();
 

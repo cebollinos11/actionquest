@@ -190,7 +190,7 @@ public class SpriteHandler : MonoBehaviour {
 
         transform.localScale = targetScale;
         sR.color = Color.Lerp(sR.color, new Color(0.5f, 0.5f, 0.5f, 0.1f),0.5f);
-        Debug.Log("die finished targetscale " + transform.localScale.ToString());
+       
         
     }
 

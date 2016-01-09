@@ -30,8 +30,21 @@ public class RoomManager : MonoBehaviour {
 
     public void CheckForEnemiesAlive() {
 
+        StartCoroutine(CheckForEnemiesAliveRoutine());      
+        
+        
+    }
+
+    IEnumerator CheckForEnemiesAliveRoutine() {
+
+        yield return new WaitForSeconds(2f);
         Object enemiesLeft = FindObjectOfType(typeof(Enemy));
-        Debug.Log(enemiesLeft);
+        if (enemiesLeft == null)
+        {
+            Door.Open();
+        }
+
+
     }
 
     public void PlaceObjects() {

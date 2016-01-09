@@ -248,6 +248,8 @@ public class Actor : MonoBehaviour {
         Vector3 scale = sH.transform.lossyScale;
         sH.transform.parent = null;
         sH.transform.localScale = scale;
+        sH.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+        sH.transform.Translate(0f, 0.1f, 0f, Space.World);
         
         Destroy(this.gameObject);
     

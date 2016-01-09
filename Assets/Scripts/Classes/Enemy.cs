@@ -143,12 +143,12 @@ public class Enemy : Actor {
 
     public override void TakeDamage(int dmg, Vector3 direction) {
         base.TakeDamage(dmg, direction);
-        Debug.Log("rat jumps");
+        
         if(rB.velocity.y==0f)
             rB.velocity += new Vector3(0, 10f, 0);
 
 
-        Debug.Log(rB.velocity);
+
 
         currentMode = EnemyMode.aggro;
     
@@ -159,7 +159,7 @@ public class Enemy : Actor {
         base.Die();
         AudioManager.PlayClip(AudioClipsType.enemyDead);
         Instantiate(loot, transform.position, Quaternion.identity);
-
+        LevelManager.Instance.currentRoom.CheckForEnemiesAlive();
         
     }
 

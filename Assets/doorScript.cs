@@ -15,6 +15,8 @@ public class doorScript : MonoBehaviour {
 
     bool opened;
 
+    
+
 	// Use this for initialization
 	void Start () {
 
@@ -33,9 +35,8 @@ public class doorScript : MonoBehaviour {
 
         }
 
-        if (opened && insideSphere && Input.GetButtonDown("Start"))
+        if (opened && insideSphere && (Input.GetButtonDown("AttackW") ||Input.GetButtonDown("AttackS") ||Input.GetButtonDown("AttackN") ||Input.GetButtonDown("AttackS")  ))
         {
-            
             enabled = false;
             StartCoroutine(TransitionToNextLevel());
         }

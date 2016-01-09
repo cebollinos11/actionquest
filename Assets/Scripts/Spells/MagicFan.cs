@@ -9,7 +9,7 @@ public class MagicFan : Spell {
     {
         base.Cast(owner1, direction1);
 
-        Debug.Log(owner1.transform.localScale.y + (owner1.transform.position - Vector3.up * owner1.transform.localScale.y).ToString());
+
         GameObject go = (GameObject)Instantiate(toInstantiate, owner1.transform.position -Vector3.up*owner1.transform.localScale.y + Vector3.up, owner1.transform.rotation);
 
         MagicFanInstance mfi = go.GetComponent<MagicFanInstance>();
