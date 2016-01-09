@@ -50,6 +50,7 @@ public class EnemySpellcaster : Enemy {
     void CastSpell() {
 
         knownSpell.GetComponent<Spell>().Cast(this.gameObject,Vector3.Scale((Player.transform.position-transform.position),new Vector3(1,0,1)).normalized);
+        BlockMove(0.5f);
     
     }
 }

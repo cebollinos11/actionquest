@@ -36,14 +36,12 @@ public class Enemy : Actor {
         Debug.Log(gameObject.name + " executes start " );
         Player = GameObject.FindGameObjectWithTag("Friendly");
         TargetPosition = transform.position;
-        loot = (GameObject)Resources.Load("Prefabs/Loot/Money");    
+        loot = LevelManager.ReturnLoot();   
     
         //randomly make it big
         if (Random.Range(0, 100) > 90)
         {
-
-            transform.localScale *= 2;
-        
+            transform.localScale *= 2;        
         }
 
 	}

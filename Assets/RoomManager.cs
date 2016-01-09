@@ -6,16 +6,24 @@ public class RoomManager : MonoBehaviour {
     public GameObject playerSpawn;
     public GameObject[] enemySpawners;
 
+    bool isBossRoom;
+
     GameObject spawner;
 
 	// Use this for initialization
 	void Start () {
 
+        Debug.Log("START OF ROOM");
         spawner = Resources.Load("Prefabs/EnemySpawner") as GameObject;
         PlaceObjects();
         LevelManager.Instance.bui.UpdatePlayer();
 	
 	}
+
+    public void Init(bool isboss)
+    {
+        isBossRoom = isboss;
+    }
 
     public void PlaceObjects() {
 
@@ -24,12 +32,22 @@ public class RoomManager : MonoBehaviour {
 
         //enemies
         int nEnemies = LevelManager.Instance.currentLevel*2;
+
+        if (isBossRoom)
+        {
+            nEnemies = 1;
+        }
         
         //GameObject enemy = LevelManager.Instance.EnemyDB[1];
         for (int i = 0; i < nEnemies; i++)
         {
 
             GameObject enemy = LevelManager.Instance.EnemyDB[Random.Range(0, LevelManager.Instance.EnemyDB.Count)];
+
+            if (isBossRoom) {
+                enemy = LevelManager.Instance.BossDB[Random.Range(0, LevelManager.Instance.BossDB.Count)];
+            }
+
             GameObject cube = enemySpawners[Random.Range(0, enemySpawners.Length)];
             float x = Random.Range(-cube.transform.localScale.x / 2f,  cube.transform.localScale.x / 2f);
             float z = Random.Range(-cube.transform.localScale.z / 2f, cube.transform.localScale.z / 2f);

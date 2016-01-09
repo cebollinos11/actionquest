@@ -35,8 +35,7 @@ public class MagicFanInstance : MonoBehaviour {
 
     void ThrowOneProjectile(Vector3 direction1)
     {
-
-        GameObject go = (GameObject)Instantiate(projectile, owner.transform.position + Vector3.up, owner.transform.rotation);
+        GameObject go = (GameObject)Instantiate(projectile, transform.position , owner.transform.rotation);
         Projectile pj = go.GetComponent<Projectile>();
         pj.direction = direction1;
         pj.tag = owner.gameObject.tag;

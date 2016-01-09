@@ -69,8 +69,8 @@ public class PlayerController : SpellCaster
         if (Input.GetButtonDown("Jump"))
         {
             //Jump();
-            //Push(new Vector3(h, 0f, v),15,0.4f);
-            //AudioManager.PlayClip(AudioClipsType.dash);
+            Push(new Vector3(h, 0f, v),15,0.4f);
+            AudioManager.PlayClip(AudioClipsType.dash);
         }
 
         

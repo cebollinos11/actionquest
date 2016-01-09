@@ -283,7 +283,7 @@ MonoBehaviour:
   maxHP: 5
   currHP: 0
   speed: 300
-  maxSpeed: 12
+  maxSpeed: 15
   jumpPower: 80
   isTouchingFloor: 0
   rB: {fileID: 0}
@@ -296,6 +296,7 @@ MonoBehaviour:
   specialSpell: {fileID: 151994, guid: 7a330c8eb74200f488489a8f223bf340, type: 2}
   lastDirection: {x: 0, y: 0, z: 0}
   EquippedWeapon: {fileID: 166512, guid: c86dd0e3363474f4f881485d0cca2cae, type: 2}
+  coins: 0
 --- !u!135 &13537504
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -388,6 +389,10 @@ Prefab:
       propertyPath: EquippedWeapon
       value: 
       objectReference: {fileID: 166512, guid: c86dd0e3363474f4f881485d0cca2cae, type: 2}
+    - target: {fileID: 0}
+      propertyPath: maxSpeed
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 139314}

@@ -10,7 +10,11 @@ public class LevelManager : Singleton<LevelManager> {
 
     [HideInInspector]public List<GameObject> EnemyDB;
     [HideInInspector]
+    public List<GameObject> BossDB;
+    [HideInInspector]
     public List<GameObject> RoomDB;
+    [HideInInspector]
+    public List<GameObject> LootDB;
 
     [HideInInspector]
     public BattleUI bui;
@@ -34,6 +38,8 @@ public class LevelManager : Singleton<LevelManager> {
         GameObject gcon = (GameObject)Instantiate(gameController, Vector3.zero, Quaternion.identity);
         gcon.transform.parent = Instance.transform;
 
+
+
         GameObject battleUI = (GameObject)Resources.Load("Prefabs/BattleUI");
         GameObject bUI = (GameObject)Instantiate(battleUI, Vector3.zero, Quaternion.identity);
         bUI.transform.parent = Instance.transform;
@@ -51,8 +57,20 @@ public class LevelManager : Singleton<LevelManager> {
 
         foreach (GameObject g in Resources.LoadAll("Prefabs/Enemies", typeof(GameObject)))
         {
-            Debug.Log("prefab found: " + g.name);
+            
             Instance.EnemyDB.Add(g);
+        }
+
+        foreach (GameObject g in Resources.LoadAll("Prefabs/Bosses", typeof(GameObject)))
+        {
+            
+            Instance.BossDB.Add(g);
+        }
+
+        foreach (GameObject g in Resources.LoadAll("Prefabs/Loot", typeof(GameObject)))
+        {
+            
+            Instance.LootDB.Add(g);
         }
 
         foreach (GameObject g in Resources.LoadAll("Prefabs/Rooms", typeof(GameObject)))
@@ -72,6 +90,13 @@ public class LevelManager : Singleton<LevelManager> {
         //Instance.Player.GetComponent<Rigidbody>().isKinematic = true;
     
     }
+
+    public static GameObject ReturnLoot() {
+
+        GameObject loot = Instance.LootDB[Random.Range(0, Instance.LootDB.Count)];
+        return loot;
+    
+}
 
 
 	// Use this for initialization
@@ -99,7 +124,8 @@ public class LevelManager : Singleton<LevelManager> {
         //GameObject map = (GameObject)Resources.Load("Prefabs/Rooms/Map");
 
         GameObject map = Instance.RoomDB[Random.Range(0, Instance.RoomDB.Count)];
-        Instantiate(map, Vector3.zero, Quaternion.Euler(0, Random.Range(0,2)*(-45), 0));
+        GameObject instantiatedMap = (GameObject)Instantiate(map, Vector3.zero, Quaternion.Euler(0, Random.Range(0,2)*(-45), 0));
+        instantiatedMap.GetComponent<RoomManager>().Init(true);//currentLevel%3==0);
 
         
 
