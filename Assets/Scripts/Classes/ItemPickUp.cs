@@ -6,7 +6,7 @@ public class ItemPickUp : MonoBehaviour {
 
     public AudioClip pickUpSound;
     public GameObject particlePickUp;
-    float pickUpOffsetTime = 1f;
+    float pickUpOffsetTime = 0.5f;
     bool canBePickedUp;
 
 	// Use this for initialization

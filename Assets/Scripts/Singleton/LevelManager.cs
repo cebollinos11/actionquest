@@ -126,12 +126,7 @@ public class LevelManager : Singleton<LevelManager> {
 	
 	}
 
-    public void LoadTestLevel() {
-
-        GameObject map = (GameObject)Resources.Load("Prefabs/TestRoom");
-        GameObject instantiatedMap = (GameObject)Instantiate(map, Vector3.zero, Quaternion.Euler(0, Random.Range(0, 2) * (-45), 0));
-        
-    }
+   
 
     public void LoadLevel()
     {
@@ -142,7 +137,7 @@ public class LevelManager : Singleton<LevelManager> {
         //GameObject map = (GameObject)Resources.Load("Prefabs/Rooms/Map");
 
         GameObject map = Instance.RoomDB[Random.Range(0, Instance.RoomDB.Count)];
-        GameObject instantiatedMap = (GameObject)Instantiate(map, Vector3.zero, Quaternion.Euler(0, Random.Range(0,2)*(-45), 0));
+        GameObject instantiatedMap = (GameObject)Instantiate(map);
         instantiatedMap.GetComponent<RoomManager>().Init(currentLevel%3==0);
         //instantiatedMap.GetComponent<RoomManager>().Init(true);
 
