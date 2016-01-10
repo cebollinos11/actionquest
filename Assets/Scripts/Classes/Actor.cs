@@ -173,14 +173,6 @@ public class Actor : MonoBehaviour {
             isTouchingFloor ++;
 
 
-            if (rB != null)
-            {
-                if (rB.velocity.y < 0f && transform.lossyScale.x > 2)
-                {
-                    ActionController.CamShake();
-                }
-            }
-            
         
         }
 

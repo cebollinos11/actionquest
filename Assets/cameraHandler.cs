@@ -17,7 +17,7 @@ public class cameraHandler : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         cam = GetComponent<Camera>();
-        originalSize = cam.orthographicSize;
+        originalSize = cam.fieldOfView;
         shakeFrequency = 1 / shakeDuration;
         ZoomOut();
 	}
@@ -39,6 +39,10 @@ public class cameraHandler : MonoBehaviour {
         StartCoroutine(ShakeIT());
     }
 
+    public void FadeOut()
+    { 
+    
+    }
 
     IEnumerator ShakeIT() {
 
@@ -71,11 +75,11 @@ public class cameraHandler : MonoBehaviour {
 
         
 
-        cam.orthographicSize = 2;
+        
         do
         {
-            float newPosition = Mathf.SmoothDamp(cam.orthographicSize, originalSize, ref yVelocity, zoomTime);
-            cam.orthographicSize = newPosition;
+            float newPosition = Mathf.SmoothDamp(cam.fieldOfView, originalSize, ref yVelocity, zoomTime);
+            cam.fieldOfView = newPosition;
             yield return new WaitForEndOfFrame();
         }
 
@@ -88,21 +92,22 @@ public class cameraHandler : MonoBehaviour {
     {
 
        
-        float targetSize = 2f;
+        float targetSize = 5f;
         yVelocity = 0.0F;
         //cam.orthographicSize = 2;
         do
         {
             
-            float newPosition = Mathf.SmoothDamp(cam.orthographicSize, targetSize, ref yVelocity, zoomTime);
-            cam.orthographicSize = newPosition;
-            
+            float newPosition = Mathf.SmoothDamp(cam.fieldOfView, targetSize, ref yVelocity, zoomTime);
+            newPosition = Mathf.Lerp(cam.fieldOfView,targetSize,0.5f);
+            cam.fieldOfView = newPosition;
+
             yield return new WaitForEndOfFrame();
         }
 
-        while (cam.orthographicSize - targetSize > 0.1f);
+        while (cam.fieldOfView - targetSize > 0.1f);
 
-        Debug.Log(cam.orthographicSize - targetSize);
+        //Debug.Log(cam.orthographicSize - targetSize);
 
     }
 

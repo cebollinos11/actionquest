@@ -3,6 +3,8 @@ using System.Collections;
 
 public class RoomManager : MonoBehaviour {
 
+    
+
     public GameObject playerSpawn;
     public GameObject[] enemySpawners;
 
@@ -19,6 +21,7 @@ public class RoomManager : MonoBehaviour {
         spawner = Resources.Load("Prefabs/EnemySpawner") as GameObject;
         PlaceObjects();
         LevelManager.Instance.bui.UpdatePlayer();
+        
 	
 	}
 

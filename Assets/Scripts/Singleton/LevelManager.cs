@@ -51,6 +51,10 @@ public class LevelManager : Singleton<LevelManager> {
 
         Instance.bui = bUI.GetComponent<BattleUI>();
 
+
+        GameObject generalUI = (GameObject)Resources.Load("Prefabs/GeneralUI");
+        GameObject gUI = (GameObject) Instantiate(generalUI, Vector3.zero, Quaternion.identity);
+        gUI.transform.parent = Instance.transform;
         
 
 

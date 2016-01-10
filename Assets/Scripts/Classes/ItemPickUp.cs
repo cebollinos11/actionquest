@@ -33,6 +33,7 @@ public class ItemPickUp : MonoBehaviour {
     {
         if (canBePickedUp && col.gameObject.tag == "Friendly")
         {
+            
             OnPickUp(col);
             LevelManager.Instance.bui.UpdatePlayer();
         }

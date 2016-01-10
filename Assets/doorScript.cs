@@ -45,10 +45,11 @@ public class doorScript : MonoBehaviour {
 
     IEnumerator TransitionToNextLevel() {
 
-        Camera.main.GetComponent<cameraHandler>().ZoomIn();
+        //Camera.main.GetComponent<cameraHandler>().ZoomIn();
+        Camera.main.GetComponent<cameraHandler>().FadeOut();
         yield return new WaitForSeconds(1f);
         LevelManager.FinishLevel();
-        Camera.main.GetComponent<cameraHandler>().ZoomOut();
+        //Camera.main.GetComponent<cameraHandler>().ZoomOut();
     }
 
     public void Open() {

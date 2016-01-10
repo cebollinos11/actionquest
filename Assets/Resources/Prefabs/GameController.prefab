@@ -94,7 +94,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
   m_StereoMirrorMode: 0
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeStrength: .300000012
   shakeDuration: .200000003
-  zoomTime: .5
+  zoomTime: .100000001
 --- !u!124 &12431546
 Behaviour:
   m_ObjectHideFlags: 1
@@ -266,7 +266,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: field of view
-      value: 30
+      value: 73
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: zoomTime
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Depth
+      value: -1.84000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_OcclusionCulling
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

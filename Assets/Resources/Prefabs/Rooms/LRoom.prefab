@@ -1697,6 +1697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4abb6a439eff6af489d2c27475fbd2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: a strange corridor
   playerSpawn: {fileID: 183230}
   enemySpawners:
   - {fileID: 120648}
@@ -1926,6 +1927,10 @@ Prefab:
       propertyPath: Door
       value: 
       objectReference: {fileID: 11461458}
+    - target: {fileID: 0}
+      propertyPath: name
+      value: a strange corridor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 116180}
