@@ -11,6 +11,9 @@ public class BattleUI : MonoBehaviour {
     [SerializeField]
     Image equippedWeap;
 
+    [SerializeField]
+    Text damageBonusWeapon;
+
 	// Use this for initialization
 	void Start () {
         pc = LevelManager.Instance.Player.GetComponent<PlayerController>();
@@ -19,9 +22,11 @@ public class BattleUI : MonoBehaviour {
     public void UpdatePlayer() {
 
         playerHP.text = pc.currHP.ToString();
-        
-        //equippedWeap.sprite = pc.equippedProjectile.sH.gameObject.GetComponent<SpriteRenderer>().sprite;
+
+        equippedWeap.sprite = pc.equippedWeapon.sprite;
         coins.text = pc.coins.ToString();
+
+        damageBonusWeapon.text = pc.equippedWeapon.damageBonus.ToString();
     
     }
 	

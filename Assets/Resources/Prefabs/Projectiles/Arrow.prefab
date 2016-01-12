@@ -27,10 +27,10 @@ GameObject:
   - 4: {fileID: 466712}
   - 135: {fileID: 13544254}
   - 114: {fileID: 11416876}
-  - 96: {fileID: 9655150}
-  - 54: {fileID: 5467750}
+  - 96: {fileID: 9647742}
+  - 54: {fileID: 5473580}
   m_Layer: 0
-  m_Name: Dagger
+  m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 409614}
   - 212: {fileID: 21242952}
-  - 114: {fileID: 11460058}
   - 114: {fileID: 11464884}
   m_Layer: 0
   m_Name: Sprite
@@ -123,7 +122,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129894}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &5467750
+--- !u!54 &5473580
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -138,7 +137,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!96 &9655150
+--- !u!96 &9647742
 TrailRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -162,19 +161,19 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Time: .100000001
-  m_StartWidth: .5
-  m_EndWidth: 0
+  m_Time: 5
+  m_StartWidth: 1
+  m_EndWidth: 1
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
-      rgba: 4283782485
+      rgba: 4278255555
     m_Color[1]:
       serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4278255454
     m_Color[2]:
       serializedVersion: 2
-      rgba: 4294923776
+      rgba: 4289068800
     m_Color[3]:
       serializedVersion: 2
       rgba: 4294967295
@@ -194,27 +193,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb5a7b7b907bc5e45b15eee55417a73e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21301444, guid: 86cb6424fc85f334c82cd354bf3c84fd, type: 3}
+  sprite: {fileID: 21301538, guid: 86cb6424fc85f334c82cd354bf3c84fd, type: 3}
   damage: 1
-  speed: 25
-  range: 10
+  speed: 20
+  range: 30
   cooldown: .100000001
   direction: {x: 0, y: 0, z: 1}
   tag: 
   soundOnThrow: {fileID: 8300000, guid: 9fbf3d3bfee716044bac80102103f6c3, type: 3}
   particleOnHitWall: {fileID: 144784, guid: 2ad494a405295c64a9d4adf25d67c20c, type: 2}
   sH: {fileID: 0}
---- !u!114 &11460058
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 167986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19bba2d087a0d684f8f63bfd413688ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11464884
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -266,7 +254,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f9180c0235cd329459df90f2f0181074, type: 3}
+  m_Sprite: {fileID: 21300854, guid: 86cb6424fc85f334c82cd354bf3c84fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -301,7 +289,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Time
-      value: .100000001
+      value: .5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_EndWidth
@@ -337,11 +325,11 @@ Prefab:
       objectReference: {fileID: 155264, guid: 8c3cb41a3a2d4b74499028d4e0b12812, type: 2}
     - target: {fileID: 0}
       propertyPath: dropPercent
-      value: .200000003
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: gravity
-      value: -10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: particleOnHitWall
@@ -352,32 +340,45 @@ Prefab:
       value: 
       objectReference: {fileID: 8300000, guid: 7c1b7d3c4922a804f9ec40bf1473971d, type: 3}
     - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300854, guid: 86cb6424fc85f334c82cd354bf3c84fd,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: m_Colors.m_Color[0].rgba
-      value: 4283782485
+      value: 4278255555
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Colors.m_Color[1].rgba
+      value: 4278255454
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Colors.m_Color[2].rgba
-      value: 4294923776
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: range
-      value: 10
+      value: 4289068800
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: speed
-      value: 25
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: range
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: soundOnThrow
       value: 
       objectReference: {fileID: 8300000, guid: 9fbf3d3bfee716044bac80102103f6c3, type: 3}
     - target: {fileID: 0}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
       propertyPath: m_UseGravity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: cooldown
@@ -390,7 +391,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: sprite
       value: 
-      objectReference: {fileID: 21301444, guid: 86cb6424fc85f334c82cd354bf3c84fd,
+      objectReference: {fileID: 21301538, guid: 86cb6424fc85f334c82cd354bf3c84fd,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -4,6 +4,7 @@ using System.Collections;
 public class Projectile : MonoBehaviour {
 
 
+    public Sprite sprite;
     public float damage;
     public float speed;    
     public float range;
@@ -42,6 +43,9 @@ public class Projectile : MonoBehaviour {
     
 
     public void InitProjectile(Vector3 projectileDirection,string ownerTag) {
+
+        sH.GetComponent<SpriteRenderer>().sprite = sprite;    
+        
 
         direction = projectileDirection;
         tag = ownerTag;

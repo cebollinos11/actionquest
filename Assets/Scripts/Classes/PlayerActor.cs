@@ -4,8 +4,8 @@ using System.Collections;
 public class PlayerActor : SpellCaster
 {
 
-    public GameObject EquippedWeapon;
-    [HideInInspector]public Projectile equippedProjectile;
+    public GameObject StartingWeapon;
+    [HideInInspector]public Weapon equippedWeapon;
 
     bool canThrow = true;
 
@@ -13,7 +13,7 @@ public class PlayerActor : SpellCaster
 
         Debug.Log("player actor init");
         base.Start();
-        equippedProjectile = EquippedWeapon.GetComponent<Projectile>();
+        equippedWeapon = StartingWeapon.GetComponent<Weapon>();
     }
 
 
@@ -34,10 +34,7 @@ public class PlayerActor : SpellCaster
 
         sH.StartMoveAnimation(SpriteHandler.AnimationType.attack);
         magicCharge = 0f;
-        GameObject go = (GameObject)Instantiate(EquippedWeapon, transform.position + Vector3.up, Quaternion.identity);
-        Projectile pj = go.GetComponent<Projectile>();
-        pj.InitProjectile(direction, gameObject.tag);
-        AudioManager.PlaySpecific(equippedProjectile.soundOnThrow);
-        StartCoroutine(EnableCanThrowIn(pj.cooldown));
+        float cooldown = equippedWeapon.Throw(gameObject, direction);
+        StartCoroutine(EnableCanThrowIn(cooldown));
     }
 }
