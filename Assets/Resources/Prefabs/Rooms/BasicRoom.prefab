@@ -32,7 +32,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &115336
 GameObject:
   m_ObjectHideFlags: 1
@@ -223,6 +223,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &168848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 458242}
+  m_Layer: 0
+  m_Name: ExitDoorLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &174402
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,6 +367,7 @@ Transform:
   - {fileID: 459146}
   - {fileID: 441018}
   - {fileID: 412638}
+  - {fileID: 458242}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &412638
@@ -457,6 +473,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 407522}
   m_RootOrder: 3
+--- !u!4 &458242
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168848}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.3000002, y: 2.5, z: 24.3999996}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 407522}
+  m_RootOrder: 5
 --- !u!4 &459146
 Transform:
   m_ObjectHideFlags: 1
@@ -1071,11 +1099,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4abb6a439eff6af489d2c27475fbd2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: a small room
   playerSpawn: {fileID: 183230}
   enemySpawners:
   - {fileID: 120648}
   Door: {fileID: 11461458}
+  exitDoorLocation: {fileID: 458242}
 --- !u!114 &11459438
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1231,6 +1259,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: name
       value: a small room
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

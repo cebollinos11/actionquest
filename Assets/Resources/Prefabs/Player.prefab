@@ -295,7 +295,7 @@ MonoBehaviour:
   basicSpell: {fileID: 151994, guid: dcebb7b17d86efd4cb94c2cb86e49c2e, type: 2}
   specialSpell: {fileID: 151994, guid: 7a330c8eb74200f488489a8f223bf340, type: 2}
   lastDirection: {x: 0, y: 0, z: 0}
-  EquippedWeapon: {fileID: 166512, guid: c86dd0e3363474f4f881485d0cca2cae, type: 2}
+  EquippedWeapon: {fileID: 166512, guid: 42ba932191145374db39ee32212521ee, type: 2}
   coins: 0
 --- !u!135 &13537504
 SphereCollider:
@@ -388,7 +388,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: EquippedWeapon
       value: 
-      objectReference: {fileID: 166512, guid: c86dd0e3363474f4f881485d0cca2cae, type: 2}
+      objectReference: {fileID: 166512, guid: 42ba932191145374db39ee32212521ee, type: 2}
     - target: {fileID: 0}
       propertyPath: maxSpeed
       value: 15

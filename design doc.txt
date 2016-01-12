@@ -1,0 +1,48 @@
+
+
+Playable Characters:
+Mage
+Soldier
+Assassin
+Hustler
+
+Player upgrades:
+* walking speed
+* max hp
+* all weapon stats
+
+Projectiles
+* Frozen bolts: Freeze an actor temporarily
+* Bouncy bolt: Bounces on walls
+* Fire bolt: Explodes on collision with walls or enemy actors
+* Cards: Low dmg, high rate, medium range
+* Daggers: Mid dmg, mid rate, mid range
+* Axes: High dmg, low rate, low range
+* Magic bolts: mid dmg, low rate, long range
+
+Spells
+* Bomb: Places a bomb that can be pushed and will explode
+* Energy wall: Places a temporary wall
+* Shield: Player takes half damage for X time
+* Cross shot: Shoots on the orthogonal directions
+* X shot: Shoots on the diagonal directions
+* Jump: Allows player to jump
+
+Companions (float around player)
+* Flying shield: Blocks projectiles
+* Floating eye: Shoots magic bolts once in a while
+
+Special Enemies:
+
+* Necromancer: Summons zombies
+* Frost elemental: Throws Frozen bolts
+* Dragon: Breathes fire bolts
+* Magician: Disappears
+* Floating eye
+* Bull rage
+* Duelist: high melee power
+* Jellyfish: Summon jellyfish babies
+
+Basic Enemies
+* Rat: Jumps at player
+* Skeleton, Soldier, Guard

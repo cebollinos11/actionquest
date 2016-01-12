@@ -11,6 +11,7 @@ public class RoomManager : MonoBehaviour {
     bool isBossRoom;
 
     public doorScript Door;
+    public Transform exitDoorLocation;
 
     GameObject spawner;
 
@@ -21,6 +22,10 @@ public class RoomManager : MonoBehaviour {
         spawner = Resources.Load("Prefabs/EnemySpawner") as GameObject;
         PlaceObjects();
         LevelManager.Instance.bui.UpdatePlayer();
+
+        GameObject exitDoorPrefab = (GameObject)Resources.Load("Prefabs/ExitDoor");
+        GameObject exitDoor = (GameObject)Instantiate(exitDoorPrefab, exitDoorLocation.transform.position, exitDoorLocation.transform.rotation);
+        Door = exitDoor.GetComponent<doorScript>();
         
 	
 	}
