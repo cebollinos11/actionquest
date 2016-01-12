@@ -19,7 +19,8 @@ public class BattleUI : MonoBehaviour {
     public void UpdatePlayer() {
 
         playerHP.text = pc.currHP.ToString();
-        //equippedWeap.sprite = pc.EquippedWeapon.GetComponent<Projectile>().sH.gameObject.GetComponent<SpriteRenderer>().sprite;
+        
+        //equippedWeap.sprite = pc.equippedProjectile.sH.gameObject.GetComponent<SpriteRenderer>().sprite;
         coins.text = pc.coins.ToString();
     
     }

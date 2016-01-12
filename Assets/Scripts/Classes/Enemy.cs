@@ -141,7 +141,7 @@ public class Enemy : Actor {
 	
 	}
 
-    public override void TakeDamage(int dmg, Vector3 direction) {
+    public override void TakeDamage(float dmg, Vector3 direction) {
         base.TakeDamage(dmg, direction);
         
         if(rB.velocity.y==0f)

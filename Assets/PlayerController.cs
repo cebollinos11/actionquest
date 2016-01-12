@@ -1,26 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerController : SpellCaster
+public class PlayerController : PlayerActor
 {
 
     
     float _h, _v;
     public Vector3 lastDirection;
-    public GameObject EquippedWeapon;
+    
 
     SpellAimer spellAimer;
 
-    Projectile equippedProjectile;
+    
 
     [HideInInspector]public int coins;
     
 
     void Start() {
         base.Start();
+        Debug.Log("player controller init");
         spellAimer = GetComponentInChildren<SpellAimer>();
         lastDirection = Vector3.right;
-        equippedProjectile = EquippedWeapon.GetComponent<Projectile>();
+        
         
     
     }
@@ -125,7 +126,7 @@ public class PlayerController : SpellCaster
 	
 	}
 
-    public override void TakeDamage(int dmg, Vector3 dir)
+    public override void TakeDamage(float dmg, Vector3 dir)
     {
         base.TakeDamage(dmg, dir);
         ActionController.CamShake();
@@ -134,16 +135,7 @@ public class PlayerController : SpellCaster
 
 
 
-    void Throw(Vector3 direction) {
-
-
-        sH.StartMoveAnimation(SpriteHandler.AnimationType.attack);
-        magicCharge = 0f;
-        GameObject go = (GameObject)Instantiate(EquippedWeapon, transform.position + Vector3.up, Quaternion.identity);
-        Projectile pj = go.GetComponent<Projectile>();
-        pj.InitProjectile(direction, gameObject.tag);
-        AudioManager.PlaySpecific(equippedProjectile.soundOnThrow);    
-    }
+    
 
     
 }

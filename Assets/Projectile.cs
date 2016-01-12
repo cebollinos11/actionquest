@@ -4,9 +4,12 @@ using System.Collections;
 public class Projectile : MonoBehaviour {
 
 
-    public float speed;
-    
+    public float damage;
+    public float speed;    
     public float range;
+    public float cooldown = 0.1f;
+
+
     float distanceTravelled;
     [HideInInspector]public Vector3 direction;
     [HideInInspector]
@@ -17,6 +20,8 @@ public class Projectile : MonoBehaviour {
 
     float currentTTL;
     float gravity = -10f;
+
+    
     
 
     bool goDown;
@@ -27,6 +32,7 @@ public class Projectile : MonoBehaviour {
 
     [HideInInspector]
     public SpriteHandler sH;
+    
 
     void Awake() {
         
@@ -98,7 +104,7 @@ public class Projectile : MonoBehaviour {
         if(checkTags(tag,go.tag))
         {
             Actor goActor = go.GetComponent<Actor>();
-            goActor.TakeDamage(1, direction);
+            goActor.TakeDamage(damage, direction);
             goActor.BlockMove(0.2f);
             
             Kill();

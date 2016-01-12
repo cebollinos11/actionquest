@@ -194,8 +194,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb5a7b7b907bc5e45b15eee55417a73e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 1
   speed: 25
   range: 5
+  cooldown: .100000001
   direction: {x: 0, y: 0, z: 1}
   tag: 
   soundOnThrow: {fileID: 8300000, guid: 9fbf3d3bfee716044bac80102103f6c3, type: 3}
@@ -391,6 +393,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cooldown
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damage
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

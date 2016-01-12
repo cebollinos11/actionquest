@@ -4,7 +4,7 @@ using System.Collections;
 public class Actor : MonoBehaviour {
 
     public int maxHP = 5;
-    [HideInInspector]public int currHP;
+    [HideInInspector]public float currHP;
 
     public int speed = 100;
     public int maxSpeed = 10;
@@ -206,7 +206,7 @@ public class Actor : MonoBehaviour {
     }
 
 
-    public virtual void TakeDamage(int dmg, Vector3 dir)
+    public virtual void TakeDamage(float dmg, Vector3 dir)
     {
 
        
