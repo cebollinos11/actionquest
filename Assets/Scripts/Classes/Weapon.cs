@@ -17,7 +17,6 @@ public class Weapon : MonoBehaviour {
 
         pj.InitProjectile(direction, owner.tag);
         pj.damage += damageBonus;
-
         return pj.cooldown;
     
     }    

@@ -129,7 +129,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -140,7 +140,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 889022161}
-  m_LocalRotation: {x: .0539995171, y: .756970465, z: -.497075528, w: -.420708627}
+  m_LocalRotation: {x: -.189616054, y: .707642555, z: -.648435056, w: -.206929579}
   m_LocalPosition: {x: 13.3000002, y: 6.25000048, z: 3.53553009}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

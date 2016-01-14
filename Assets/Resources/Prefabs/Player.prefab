@@ -288,7 +288,6 @@ MonoBehaviour:
   isTouchingFloor: 0
   rB: {fileID: 0}
   sH: {fileID: 0}
-  soundGetHit: {fileID: 8300000, guid: a93b1fa8d98cdfa41a319b6ae15269ba, type: 3}
   soundSteps: {fileID: 8300000, guid: ae2510032d5a1de41a013cb1ea359d58, type: 3}
   stepsFreq: .300000012
   particleOnHit: {fileID: 0}

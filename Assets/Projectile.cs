@@ -53,6 +53,14 @@ public class Projectile : MonoBehaviour {
         distanceTravelled = Random.Range(-0.5f, 0.5f);
         currentTTL = 0;
         direction += new Vector3(Random.Range(-directionVariation, directionVariation), 0, Random.Range(-directionVariation, directionVariation));
+
+        if (ownerTag == "Enemy")
+        {
+            sH.GetComponent<SpriteRenderer>().color = Color.red;
+        }
+
+        float angle = -Mathf.Atan2(projectileDirection.x, projectileDirection.z) * Mathf.Rad2Deg;
+        sH.transform.Rotate(Vector3.forward, angle);
     
     }
 

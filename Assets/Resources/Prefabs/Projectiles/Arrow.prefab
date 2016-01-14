@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb5a7b7b907bc5e45b15eee55417a73e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21301538, guid: 86cb6424fc85f334c82cd354bf3c84fd, type: 3}
+  sprite: {fileID: 21301536, guid: 86cb6424fc85f334c82cd354bf3c84fd, type: 3}
   damage: 1
   speed: 20
   range: 30
@@ -391,7 +391,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: sprite
       value: 
-      objectReference: {fileID: 21301538, guid: 86cb6424fc85f334c82cd354bf3c84fd,
+      objectReference: {fileID: 21301536, guid: 86cb6424fc85f334c82cd354bf3c84fd,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

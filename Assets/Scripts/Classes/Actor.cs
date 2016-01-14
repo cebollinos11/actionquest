@@ -6,7 +6,7 @@ public class Actor : MonoBehaviour {
     public int maxHP = 5;
     [HideInInspector]public float currHP;
 
-    public int speed = 100;
+    [HideInInspector]public int speed = 100;
     public int maxSpeed = 10;
     public int jumpPower=10;
 
@@ -23,11 +23,11 @@ public class Actor : MonoBehaviour {
 
     int MoveBlocked;
 
-    public AudioClip soundGetHit;
+    
 
     
     public AudioClip soundSteps;
-    public float stepsFreq = 0.7f;
+    [HideInInspector]public float stepsFreq = 0.7f;
     float stepsSoundCounter;
 
     [HideInInspector]public GameObject particleOnHit;

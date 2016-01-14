@@ -11,8 +11,8 @@ public class Enemy : Actor {
     public AudioClip warCrySound;
     public bool noMelee;
     public float meleeDash = 10f;
-    public EnemyMode currentMode = EnemyMode.wander;
-    public Vector3 TargetPosition;
+    [HideInInspector]public EnemyMode currentMode = EnemyMode.wander;
+    [HideInInspector]public Vector3 TargetPosition;
     float wanderRange = 10f;
     float wanderFrequencyChange = 3f;
     float currentWanderFrequencyTimer = 0f;
@@ -21,11 +21,14 @@ public class Enemy : Actor {
     float currentAttackTimer;
     [HideInInspector] public GameObject Player;
 
-    public AudioClip soundAttack;
+    
 
     protected Vector3 currentPositionDifferenceToTarget;
 
     protected GameObject loot;
+
+    public GameObject startingWeapon;
+    Weapon weaponScript;
 
 
     
@@ -44,13 +47,18 @@ public class Enemy : Actor {
             transform.localScale *= 2;        
         }
 
+        if (startingWeapon)
+        {
+            weaponScript = startingWeapon.GetComponent<Weapon>();
+        }
+
 	}
 
 
     IEnumerator JumpAttackTimed() {
 
         //audio     
-        float jumpAtackFreezeTime = 0.2f;
+        float jumpAtackFreezeTime = 0.2f + Random.Range(0f,0.5f);
 
         sH.Flash(Color.black, 1);
         BlockMove(jumpAtackFreezeTime);
@@ -68,18 +76,27 @@ public class Enemy : Actor {
         AudioManager.PlaySpecific(warCrySound);
         Jump();
         Vector3 direction = Player.transform.position - transform.position;
-        Push(direction.normalized, meleeDash, 1);
-
-        
-
-        
-        
+        Push(direction.normalized, meleeDash, 1);       
     
     }
 
     void Attack() {
 
-        StartCoroutine(JumpAttackTimed());        
+        
+            
+
+        if (weaponScript)
+        {
+            if(Random.Range(1,100)>70)
+                AudioManager.PlaySpecific(warCrySound);
+
+            weaponScript.Throw(gameObject, (Player.transform.position - transform.position).normalized);
+        }
+
+        else {
+            StartCoroutine(JumpAttackTimed());        
+        }
+        
     
     }
 	
@@ -88,15 +105,20 @@ public class Enemy : Actor {
 
         currentPositionDifferenceToTarget = Player.transform.position - transform.position;
 
+
+        
+
         if (currentMode == EnemyMode.aggro)
         {
             //Debug.Log(TargetPosition.ToString()+" "+transform.position.ToString()+" "+(TargetPosition - transform.position).magnitude);
 
             TargetPosition = Player.transform.position;
+
+            
             Move(Vector3.Scale(currentPositionDifferenceToTarget, new Vector3(1, 0, 1)));
 
 
-            if (!noMelee && (currentPositionDifferenceToTarget).sqrMagnitude < 150)
+            if (!noMelee && (currentPositionDifferenceToTarget).sqrMagnitude < 300)
             {
 
 
@@ -105,6 +127,7 @@ public class Enemy : Actor {
                 {
                     currentAttackTimer = attackFreq+Random.Range(0f,attackFreq*0.3f);
                     Attack();
+                    
                 }
 
                 
