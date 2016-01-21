@@ -19,7 +19,7 @@ public class SpriteHandler : MonoBehaviour {
     public int spriteOrientation = 1;    
 
     public enum AnimationType { 
-        walk,jump,attack
+        walk,jump,attack,dash
     }
 
     public void SetSpriteOrientation(int orientation)
@@ -131,7 +131,9 @@ public class SpriteHandler : MonoBehaviour {
             targetScale = new Vector3(origScale.x * (1f - MoveAnimIntensity) , origScale.y * (1f + MoveAnimIntensity * 2), origScale.z);
 
         else if (aType == AnimationType.attack)
-            targetScale = new Vector3(origScale.x * (1f + MoveAnimIntensity * 2) , origScale.y*0.9f, origScale.z);           
+            targetScale = new Vector3(origScale.x * (1f + MoveAnimIntensity * 2) , origScale.y*0.9f, origScale.z);
+        else if (aType == AnimationType.dash)
+            targetScale = new Vector3(origScale.x * 1.5f, origScale.y * 0.5f, origScale.z);         
 
         do {
 
@@ -200,7 +202,7 @@ public class SpriteHandler : MonoBehaviour {
         Vector3 secureOrigScale = transform.localScale;
 
         Vector3 origScale = transform.localScale;
-        Vector3 targetScale = new Vector3(origScale.x * (1.2f), origScale.y * (0.1f), origScale.z);
+        Vector3 targetScale = new Vector3(origScale.x * (0.1f), origScale.y * (0.1f), origScale.z);
 
         do
         {

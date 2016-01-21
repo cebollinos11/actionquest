@@ -37,4 +37,23 @@ public class PlayerActor : SpellCaster
         float cooldown = equippedWeapon.Throw(gameObject, direction);
         StartCoroutine(EnableCanThrowIn(cooldown));
     }
+
+   public override void Die()
+   {
+
+       base.Die();
+       StartCoroutine(GoToMainMenu());
+       
+
+   }
+
+   IEnumerator GoToMainMenu() {
+       //Time.timeScale = 0.3f;
+       yield return new WaitForSeconds(0.1f);
+       
+       Time.timeScale = 1f;
+       Application.LoadLevel("title");
+       LevelManager.RestartGame();
+   
+   }
 }

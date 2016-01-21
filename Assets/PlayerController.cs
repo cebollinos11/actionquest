@@ -71,6 +71,8 @@ public class PlayerController : PlayerActor
         {
             //Jump();
             Push(new Vector3(h, 0f, v),15,0.4f);
+            sH.Mask(Color.blue);
+            sH.StartMoveAnimation(SpriteHandler.AnimationType.dash);
             AudioManager.PlayClip(AudioClipsType.dash);
         }
 

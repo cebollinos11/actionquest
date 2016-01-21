@@ -72,7 +72,7 @@ public class AudioManager : Singleton<AudioManager>
         audioMap[AudioClipsType.throwProjectile] = Resources.Load("Audio/SFX/lasershoot") as AudioClip;
         audioMap[AudioClipsType.thump] = Resources.Load("Audio/SFX/hitHurt") as AudioClip;
         audioMap[AudioClipsType.getHurt] = Resources.Load("Audio/SFX/Hit_Hurt2") as AudioClip;
-        audioMap[AudioClipsType.dash] = Resources.Load("Audio/SFX/RPG Sound Pack/battle/sword-unsheathe") as AudioClip;
+        audioMap[AudioClipsType.dash] = Resources.Load("Audio/SFX/RPG Sound Pack/battle/swing3") as AudioClip;
 
 
     }

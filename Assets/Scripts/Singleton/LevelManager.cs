@@ -25,6 +25,14 @@ public class LevelManager : Singleton<LevelManager> {
     public RoomManager currentRoom;
 
 
+    public static void RestartGame() {
+        Instance.currentLevel = 0;
+        GameObject player = (GameObject)Resources.Load("Prefabs/Player");
+        Instance.Player = Instantiate(player, Vector3.zero, Quaternion.identity) as GameObject;
+        Instance.Player.gameObject.name = "Player";
+        Destroy(Instance.gameObject);
+    }
+
     static void Init() {
 
         Instance.alreadyInitialized = true;
@@ -134,17 +142,17 @@ public class LevelManager : Singleton<LevelManager> {
 
 
         Debug.Log("Loading level " + currentLevel.ToString());
+
+        
+
+
         //GameObject map = (GameObject)Resources.Load("Prefabs/Rooms/Map");
 
         GameObject map = Instance.RoomDB[Random.Range(0, Instance.RoomDB.Count)];
         GameObject instantiatedMap = (GameObject)Instantiate(map);
         instantiatedMap.GetComponent<RoomManager>().Init(currentLevel%3==0);
         //instantiatedMap.GetComponent<RoomManager>().Init(true);
-
-        currentRoom = instantiatedMap.GetComponent<RoomManager>();
-
-
-        
+        currentRoom = instantiatedMap.GetComponent<RoomManager>();  
 
         Debug.Log("Finish loading");
         

@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &139314
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +286,7 @@ MonoBehaviour:
   currHP: 0
   speed: 300
   maxSpeed: 15
-  jumpPower: 80
+  jumpPower: 40
   isTouchingFloor: 0
   rB: {fileID: 0}
   sH: {fileID: 0}
@@ -403,6 +403,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8d711628ec6f52a4897678b1e2567041, type: 2}
+    - target: {fileID: 0}
+      propertyPath: jumpPower
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 139314}
