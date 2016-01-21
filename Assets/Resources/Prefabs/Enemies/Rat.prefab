@@ -151,6 +151,7 @@ MonoBehaviour:
   MoveTime: .100000001
   MoveAnimIntensity: .200000003
   flashTime: .5
+  sR: {fileID: 0}
   spriteOrientation: 1
 --- !u!114 &11433050
 MonoBehaviour:
@@ -219,7 +220,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8d711628ec6f52a4897678b1e2567041, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -259,6 +260,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8d711628ec6f52a4897678b1e2567041, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 177218}

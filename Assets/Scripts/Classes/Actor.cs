@@ -215,7 +215,8 @@ public class Actor : MonoBehaviour {
 
         Instantiate(particleOnHit, transform.position + new Vector3(0, 1, -1), Quaternion.identity);
 
-        sH.Flash(Color.white, 1);
+        //sH.Flash(Color.white, 1);
+        sH.Mask(Color.white);
         sH.StartMoveAnimation(SpriteHandler.AnimationType.walk);
         rB.velocity += dir * 10;
 
@@ -237,11 +238,11 @@ public class Actor : MonoBehaviour {
     }
 
     void RemoveRigidbody() {
-        Vector3 scale = sH.transform.lossyScale;
-        sH.transform.parent = null;
-        sH.transform.localScale = scale;
-        sH.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
-        sH.transform.Translate(0f, 0.1f, 0f, Space.World);
+        //Vector3 scale = sH.transform.lossyScale;
+        //sH.transform.parent = null;
+        //sH.transform.localScale = scale;
+        //sH.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+        //sH.transform.Translate(0f, 0.1f, 0f, Space.World);
         
         Destroy(this.gameObject);
     

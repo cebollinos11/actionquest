@@ -13,7 +13,8 @@ public class SpriteHandler : MonoBehaviour {
 
     Color baseColor;
     Vector3 baseScale;
-    SpriteRenderer sR;
+    [HideInInspector]
+    public SpriteRenderer sR;
 
     public int spriteOrientation = 1;    
 
@@ -51,6 +52,28 @@ public class SpriteHandler : MonoBehaviour {
         if(transform.localScale.x*spriteOrientation < 0)
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         
+    }
+
+    public void Mask(Color color)
+    {
+
+        StartCoroutine(MaskIT(color));
+    }
+
+    IEnumerator MaskIT(Color color) {
+
+        float val = 1f;
+        sR.material.SetColor("_MaskColor", color);
+        sR.material.SetFloat("_MaskAmount", val);
+
+        do {
+            val -= 0.1f;
+            sR.material.SetFloat("_MaskAmount", val);
+            yield return new WaitForSeconds(0.02f);
+        
+        }
+        while (val > 0);
+    
     }
 
     public void Flash(Color targetColor, int times) {
@@ -166,7 +189,7 @@ public class SpriteHandler : MonoBehaviour {
     }
 
     public void RunDie() {
-
+        sR.material.SetFloat("_MaskAmount", 0.5f);
         StopAllCoroutines();
         StartCoroutine(Die());
     }
@@ -177,14 +200,14 @@ public class SpriteHandler : MonoBehaviour {
         Vector3 secureOrigScale = transform.localScale;
 
         Vector3 origScale = transform.localScale;
-        Vector3 targetScale = new Vector3(origScale.x * (1.2f), origScale.y * (0.3f), origScale.z);
+        Vector3 targetScale = new Vector3(origScale.x * (1.2f), origScale.y * (0.1f), origScale.z);
 
         do
         {
            
             transform.localScale = Vector3.Lerp(targetScale, origScale, currentTime / MoveTime);
-            currentTime -= Time.deltaTime;
-            yield return null;
+            currentTime -= Time.deltaTime*0.1f;
+            yield return new WaitForEndOfFrame();
 
         } while (currentTime > 0f);
 

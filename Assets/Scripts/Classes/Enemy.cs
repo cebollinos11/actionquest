@@ -59,7 +59,8 @@ public class Enemy : Actor {
 
         //audio     
         float jumpAtackFreezeTime = 0.2f + Random.Range(0f,0.5f);
-        sH.Flash(Color.black, 1);
+        //sH.Flash(Color.black, 1);
+        sH.Mask(Color.red);
         BlockMove(jumpAtackFreezeTime);
         yield return new WaitForSeconds(jumpAtackFreezeTime);
 
@@ -95,6 +96,7 @@ public class Enemy : Actor {
             if(Random.Range(1,100)>50)
                 AudioManager.PlaySpecific(warCrySound);
 
+            sH.Mask(Color.grey);
             weaponScript.Throw(gameObject, Vector3.Scale( (Player.transform.position - transform.position).normalized , new Vector3(1,0,1)));
         }
 
