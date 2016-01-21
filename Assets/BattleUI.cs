@@ -23,6 +23,9 @@ public class BattleUI : MonoBehaviour {
 
         playerHP.text = pc.currHP.ToString() + "/"+pc.maxHP.ToString();
 
+        Debug.Log(pc);
+        Debug.Log(pc.equippedWeapon);
+        Debug.Log(pc.equippedWeapon.sprite);
         equippedWeap.sprite = pc.equippedWeapon.sprite;
         coins.text = pc.coins.ToString();
 

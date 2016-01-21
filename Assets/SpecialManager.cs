@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class SpecialManager : MonoBehaviour {
 
     CanvasManager cM;
@@ -20,20 +21,32 @@ public class SpecialManager : MonoBehaviour {
 
     void Roll()
     {
-        if (1 > 2)
+        if (Random.Range(1,100)>50)
         {
 
             cM.MainText.text = "You level up!";
             LevelManager.Instance.Player.GetComponent<Actor>().maxHP += 1;
             LevelManager.Instance.bui.UpdatePlayer();
-            StartCoroutine(EnableExit());
+            
         }
 
-        else { 
+        else {
+
+            cM.MainText.text = "You find a new weapon";
+            GameObject newWeapon =  LevelManager.Instance.WeaponDB[Random.Range(0, LevelManager.Instance.WeaponDB.Count)];
+            Weapon newWeaponScript = newWeapon.GetComponent<Weapon>();
+            cM.SetMainImage(newWeaponScript.sprite);
+            LevelManager.Instance.Player.GetComponent<PlayerActor>().equippedWeapon = newWeaponScript;
+            if (newWeaponScript == null) {
+                Debug.Log("Problems here");
+                Debug.Log(newWeapon.name);
+            }
+
+
         
         }
-        
-    
+
+        StartCoroutine(EnableExit());
     }
 
     IEnumerator EnableExit() {

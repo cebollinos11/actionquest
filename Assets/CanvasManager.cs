@@ -6,6 +6,7 @@ public class CanvasManager : MonoBehaviour {
 
     public Text MainText;
     public Text ExitText;
+    public Image MainImage;
 
 	// Use this for initialization
 	void Start () {
@@ -17,4 +18,10 @@ public class CanvasManager : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void SetMainImage(Sprite sprite) {
+
+        MainImage.sprite = sprite;
+    
+    }
 }

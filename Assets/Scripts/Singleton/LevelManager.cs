@@ -18,6 +18,8 @@ public class LevelManager : Singleton<LevelManager> {
     public List<GameObject> RoomDB;
     [HideInInspector]
     public List<GameObject> LootDB;
+    [HideInInspector]
+    public List<GameObject> WeaponDB;
 
     [HideInInspector]
     public BattleUI bui;
@@ -82,6 +84,12 @@ public class LevelManager : Singleton<LevelManager> {
         {
             
             Instance.BossDB.Add(g);
+        }
+
+        foreach (GameObject g in Resources.LoadAll("Prefabs/Weapons", typeof(GameObject)))
+        {
+
+            Instance.WeaponDB.Add(g);
         }
 
         foreach (GameObject g in Resources.LoadAll("Prefabs/Loot", typeof(GameObject)))
@@ -176,13 +184,13 @@ public class LevelManager : Singleton<LevelManager> {
 
         Debug.Log("Go to next level!");
 
-        SavePlayer();        
+        SavePlayer();
 
-        
-        
-        
 
-        LevelManager.Instance.Player.gameObject.SetActive(false);
+
+        LevelManager.Instance.Player.GetComponent<PlayerController>().enabled = false;
+        LevelManager.Instance.Player.GetComponent<Rigidbody>().isKinematic = true;
+
         Application.LoadLevel("special");
         
     }
@@ -190,8 +198,27 @@ public class LevelManager : Singleton<LevelManager> {
     public static void LoadNextLevel() {
           
         Instance.currentLevel++;
-        LevelManager.Instance.Player.gameObject.SetActive(true);
+        LevelManager.Instance.Player.GetComponent<PlayerController>().enabled = true;
+        LevelManager.Instance.Player.GetComponent<Rigidbody>().isKinematic = false;
+        
         Application.LoadLevel("game");
+    }
+
+    public void PlayerDied() {
+        DisableEnemies();
+        StartCoroutine(GoToMainMenu());
+
+    
+    }
+    IEnumerator GoToMainMenu()
+    {
+
+
+        yield return new WaitForSeconds(5f);
+
+        Application.LoadLevel("title");
+        LevelManager.RestartGame();
+
     }
 
     public void DisableEnemies() {

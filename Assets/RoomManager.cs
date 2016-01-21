@@ -57,6 +57,7 @@ public class RoomManager : MonoBehaviour {
     public void PlaceObjects() {
 
         LevelManager.Instance.Player.transform.position = playerSpawn.transform.position;
+        LevelManager.Instance.Player.GetComponent<Rigidbody>().velocity = Vector3.zero;
         Debug.Log("room started");
 
         //enemies
