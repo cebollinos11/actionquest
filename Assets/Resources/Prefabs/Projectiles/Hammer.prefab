@@ -195,10 +195,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21301344, guid: 86cb6424fc85f334c82cd354bf3c84fd, type: 3}
-  damage: 1
-  speed: 25
-  range: 5
-  cooldown: .100000001
+  damage: 3
+  speed: 15
+  range: 2
+  cooldown: .5
   direction: {x: 0, y: 0, z: 1}
   tag: 
   soundOnThrow: {fileID: 8300000, guid: 9fbf3d3bfee716044bac80102103f6c3, type: 3}
@@ -361,11 +361,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: range
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: speed
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Sprite
@@ -398,11 +398,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: cooldown
-      value: .100000001
+      value: .5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: damage
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: sprite

@@ -215,7 +215,7 @@ public class Actor : MonoBehaviour {
 
         Instantiate(particleOnHit, transform.position + new Vector3(0, 1, -1), Quaternion.identity);
 
-        sH.Flash(Color.red, 1);
+        sH.Flash(Color.white, 1);
         sH.StartMoveAnimation(SpriteHandler.AnimationType.walk);
         rB.velocity += dir * 10;
 

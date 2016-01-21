@@ -42,7 +42,7 @@ public class Enemy : Actor {
         loot = LevelManager.ReturnLoot();   
     
         //randomly make it big
-        if (Random.Range(0, 100) > 90)
+        if (Random.Range(0, 100) > 95)
         {
             transform.localScale *= 2;        
         }
@@ -59,10 +59,15 @@ public class Enemy : Actor {
 
         //audio     
         float jumpAtackFreezeTime = 0.2f + Random.Range(0f,0.5f);
-
         sH.Flash(Color.black, 1);
         BlockMove(jumpAtackFreezeTime);
         yield return new WaitForSeconds(jumpAtackFreezeTime);
+
+        maxSpeed *= 2;
+
+        yield return new WaitForSeconds(0.3f);
+
+        maxSpeed /= 2;
 
 
         JumpAttack();
@@ -80,22 +85,30 @@ public class Enemy : Actor {
     
     }
 
-    void Attack() {
+    void Attack(float distToTarget) {
 
         
             
 
-        if (weaponScript)
+        if (weaponScript )
         {
-            if(Random.Range(1,100)>70)
+            if(Random.Range(1,100)>50)
                 AudioManager.PlaySpecific(warCrySound);
 
-            weaponScript.Throw(gameObject, (Player.transform.position - transform.position).normalized);
+            weaponScript.Throw(gameObject, Vector3.Scale( (Player.transform.position - transform.position).normalized , new Vector3(1,0,1)));
         }
 
         else {
+
+            if (distToTarget > 150)
+                return;
+
             StartCoroutine(JumpAttackTimed());        
         }
+
+
+
+        currentAttackTimer = attackFreq + Random.Range(0f, attackFreq * 0.3f);
         
     
     }
@@ -125,8 +138,8 @@ public class Enemy : Actor {
                 currentAttackTimer -= Time.deltaTime;
                 if (currentAttackTimer < 0)
                 {
-                    currentAttackTimer = attackFreq+Random.Range(0f,attackFreq*0.3f);
-                    Attack();
+
+                    Attack((currentPositionDifferenceToTarget).sqrMagnitude);
                     
                 }
 
@@ -170,7 +183,7 @@ public class Enemy : Actor {
         if(rB.velocity.y==0f)
             rB.velocity += new Vector3(0, 10f, 0);
 
-
+        currentAttackTimer = attackFreq + Random.Range(0f, attackFreq * 0.3f);
 
 
         currentMode = EnemyMode.aggro;

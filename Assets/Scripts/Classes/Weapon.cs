@@ -10,8 +10,9 @@ public class Weapon : MonoBehaviour {
 
     public float Throw(GameObject owner,Vector3 direction)
     {
+        //         GameObject go = (GameObject)Instantiate(toInstantiate, owner1.transform.position -Vector3.up*owner1.transform.localScale.y + Vector3.up, owner1.transform.rotation);
 
-        GameObject go = (GameObject)Instantiate(projectile, owner.transform.position + Vector3.up, Quaternion.identity);
+        GameObject go = (GameObject)Instantiate(projectile, owner.transform.position - Vector3.up * owner.transform.localScale.y + Vector3.up, Quaternion.identity);
         Projectile pj = go.GetComponent<Projectile>();
         AudioManager.PlaySpecific(pj.soundOnThrow);
 

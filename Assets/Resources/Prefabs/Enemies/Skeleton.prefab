@@ -171,25 +171,24 @@ MonoBehaviour:
   isTouchingFloor: 0
   rB: {fileID: 0}
   sH: {fileID: 0}
-  soundGetHit: {fileID: 8300000, guid: a93b1fa8d98cdfa41a319b6ae15269ba, type: 3}
   soundSteps: {fileID: 0}
   stepsFreq: .699999988
   particleOnHit: {fileID: 0}
-  warCrySound: {fileID: 8300000, guid: 4d08cd0db9e28604eb47a14b7638c064, type: 3}
+  warCrySound: {fileID: 8300000, guid: f7507c96631c03148bcbadbd89089050, type: 3}
   noMelee: 0
   meleeDash: 33
   currentMode: 0
   TargetPosition: {x: 0, y: 0, z: 0}
   attackFreq: 2
   Player: {fileID: 0}
-  soundAttack: {fileID: 0}
+  startingWeapon: {fileID: 0}
 --- !u!114 &11469086
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177218}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d47718065e1dd645ae2ac0d19d4f47a, type: 3}
   m_Name: 
@@ -260,6 +259,14 @@ Prefab:
       propertyPath: m_SortingOrder
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: warCrySound
+      value: 
+      objectReference: {fileID: 8300000, guid: f7507c96631c03148bcbadbd89089050, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 177218}

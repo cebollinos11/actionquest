@@ -1,50 +1,15 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &136230
+--- !u!1 &115092
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 426030}
-  - 54: {fileID: 5451284}
-  - 135: {fileID: 13524470}
-  - 114: {fileID: 11481940}
-  m_Layer: 0
-  m_Name: Mage
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &150790
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 424934}
-  - 33: {fileID: 3368310}
-  - 23: {fileID: 2351710}
-  m_Layer: 0
-  m_Name: Sphere
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &188202
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 468888}
-  - 212: {fileID: 21257882}
-  - 114: {fileID: 11470890}
+  - 4: {fileID: 414462}
+  - 212: {fileID: 21250870}
+  - 114: {fileID: 11444350}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -52,50 +17,85 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &424934
+--- !u!1 &143244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 424038}
+  - 33: {fileID: 3364694}
+  - 23: {fileID: 2321420}
+  m_Layer: 0
+  m_Name: Shadow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &172162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 468762}
+  - 54: {fileID: 5422090}
+  - 135: {fileID: 13513476}
+  - 114: {fileID: 11481586}
+  m_Layer: 0
+  m_Name: Jelly
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &414462
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 150790}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -.5}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_Children: []
-  m_Father: {fileID: 426030}
-  m_RootOrder: 1
---- !u!4 &426030
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136230}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.2094421, y: 15.2738514, z: -69.8036041}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 468888}
-  - {fileID: 424934}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
---- !u!4 &468888
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 188202}
+  m_GameObject: {fileID: 115092}
   m_LocalRotation: {x: .382683456, y: 0, z: 0, w: .923879504}
   m_LocalPosition: {x: 0, y: -1, z: -1.01999998}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
-  m_Father: {fileID: 426030}
+  m_Father: {fileID: 468762}
   m_RootOrder: 0
---- !u!23 &2351710
+--- !u!4 &424038
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143244}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -.5}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children: []
+  m_Father: {fileID: 468762}
+  m_RootOrder: 1
+--- !u!4 &468762
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172162}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.6122551, y: 17.7000008, z: 21.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 414462}
+  - {fileID: 424038}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!23 &2321420
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 150790}
+  m_GameObject: {fileID: 143244}
   m_Enabled: 1
   m_CastShadows: 3
   m_ReceiveShadows: 1
@@ -114,19 +114,19 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3368310
+--- !u!33 &3364694
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 150790}
+  m_GameObject: {fileID: 143244}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &5451284
+--- !u!54 &5422090
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136230}
+  m_GameObject: {fileID: 172162}
   serializedVersion: 2
   m_Mass: 80
   m_Drag: 0
@@ -136,12 +136,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &11470890
+--- !u!114 &11444350
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 188202}
+  m_GameObject: {fileID: 115092}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2c3de587823d694a8aba29fbe3d45c8, type: 3}
@@ -151,12 +151,12 @@ MonoBehaviour:
   MoveAnimIntensity: .200000003
   flashTime: .5
   spriteOrientation: 1
---- !u!114 &11481940
+--- !u!114 &11481586
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136230}
+  m_GameObject: {fileID: 172162}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a696d26a886c68488b5cc7d27796488, type: 3}
@@ -166,39 +166,39 @@ MonoBehaviour:
   currHP: 0
   speed: 100
   maxSpeed: 10
-  jumpPower: 10
+  jumpPower: 30
   isTouchingFloor: 0
   rB: {fileID: 0}
   sH: {fileID: 0}
   soundSteps: {fileID: 0}
   stepsFreq: .699999988
   particleOnHit: {fileID: 0}
-  warCrySound: {fileID: 8300000, guid: 6771acff9a4a4cb4ea9f42960bac06b5, type: 3}
+  warCrySound: {fileID: 8300000, guid: 24eb31e7398b48d479d26c6982037935, type: 3}
   noMelee: 0
-  meleeDash: 10
+  meleeDash: 2
   currentMode: 0
   TargetPosition: {x: 0, y: 0, z: 0}
   attackFreq: 2
   Player: {fileID: 0}
-  startingWeapon: {fileID: 196620, guid: 7b1ab47f5bfd22c4095afdebe1074ca6, type: 2}
---- !u!135 &13524470
+  startingWeapon: {fileID: 0}
+--- !u!135 &13513476
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136230}
+  m_GameObject: {fileID: 172162}
   m_Material: {fileID: 13400000, guid: eeedeb7b3039b234391944b3c896d34e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!212 &21257882
+--- !u!212 &21250870
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 188202}
+  m_GameObject: {fileID: 115092}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -217,7 +217,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300150, guid: 86cb6424fc85f334c82cd354bf3c84fd, type: 3}
+  m_Sprite: {fileID: 21300294, guid: 86cb6424fc85f334c82cd354bf3c84fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -227,35 +227,39 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
-      propertyPath: spellFrequency
+      propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: attackFreq
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300294, guid: 86cb6424fc85f334c82cd354bf3c84fd,
+        type: 3}
     - target: {fileID: 0}
       propertyPath: m_SortingOrder
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: warCrySound
-      value: 
-      objectReference: {fileID: 8300000, guid: 6771acff9a4a4cb4ea9f42960bac06b5, type: 3}
-    - target: {fileID: 0}
-      propertyPath: startingWeapon
-      value: 
-      objectReference: {fileID: 196620, guid: 7b1ab47f5bfd22c4095afdebe1074ca6, type: 2}
-    - target: {fileID: 0}
-      propertyPath: attackFreq
-      value: 2
+      propertyPath: jumpPower
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300150, guid: 86cb6424fc85f334c82cd354bf3c84fd,
-        type: 3}
-    - target: {fileID: 0}
-      propertyPath: noMelee
-      value: 0
+      propertyPath: meleeDash
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 136230}
+  m_RootGameObject: {fileID: 172162}
   m_IsPrefabParent: 1

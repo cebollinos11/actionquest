@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 406290}
   - 114: {fileID: 11467818}
   m_Layer: 0
-  m_Name: WeaponDagger
+  m_Name: WeaponAxe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,8 +39,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aafeb13f728f45449aef99bca0b6183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 166512, guid: 42ba932191145374db39ee32212521ee, type: 2}
-  sprite: {fileID: 21301444, guid: 86cb6424fc85f334c82cd354bf3c84fd, type: 3}
+  projectile: {fileID: 166512, guid: c86dd0e3363474f4f881485d0cca2cae, type: 2}
+  sprite: {fileID: 21301344, guid: 86cb6424fc85f334c82cd354bf3c84fd, type: 3}
+  damageBonus: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -51,8 +52,12 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: sprite
       value: 
-      objectReference: {fileID: 21301444, guid: 86cb6424fc85f334c82cd354bf3c84fd,
+      objectReference: {fileID: 21301344, guid: 86cb6424fc85f334c82cd354bf3c84fd,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 166512, guid: c86dd0e3363474f4f881485d0cca2cae, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 196620}
