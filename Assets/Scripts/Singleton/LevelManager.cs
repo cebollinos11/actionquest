@@ -170,14 +170,41 @@ public class LevelManager : Singleton<LevelManager> {
         }
     }
 
+
+
     public static void FinishLevel() {
 
         Debug.Log("Go to next level!");
-        Instance.currentLevel++;
+
         SavePlayer();        
-        //Camera.main.GetComponent<cameraHandler>().ZoomIn();
-        Application.LoadLevel("game");
+
         
+        
+        
+
+        LevelManager.Instance.Player.gameObject.SetActive(false);
+        Application.LoadLevel("special");
+        
+    }
+
+    public static void LoadNextLevel() {
+          
+        Instance.currentLevel++;
+        LevelManager.Instance.Player.gameObject.SetActive(true);
+        Application.LoadLevel("game");
+    }
+
+    public void DisableEnemies() {
+
+        Enemy[] enemyList = GameObject.FindObjectsOfType<Enemy>();
+
+        for (int i = 0; i < enemyList.Length; i++)
+
+        {
+            enemyList[i].enabled = false;
+        }
+        
+    
     }
 
 	

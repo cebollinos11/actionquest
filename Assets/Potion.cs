@@ -11,8 +11,8 @@ public class Potion : ItemPickUp {
         base.OnPickUp(col);
         if (health)
         {
-            col.gameObject.GetComponent<PlayerController>().currHP++;
-            GeneralUI.Instance.ShowMessage("+1 HP");
+            col.gameObject.GetComponent<PlayerController>().HealDamage(1f);
+            //GeneralUI.Instance.ShowMessage("+1 HP");
         }
 
         

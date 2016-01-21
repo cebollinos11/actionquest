@@ -205,6 +205,13 @@ public class Actor : MonoBehaviour {
         }
     }
 
+    public virtual void HealDamage(float n)
+    {
+        currHP += n;
+        if (currHP > maxHP) {
+            currHP = maxHP;
+        }
+    }
 
     public virtual void TakeDamage(float dmg, Vector3 dir)
     {

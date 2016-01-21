@@ -69,6 +69,7 @@ public class PlayerController : PlayerActor
 
         if (Input.GetButtonDown("Jump"))
         {
+            
             //Jump();
             Push(new Vector3(h, 0f, v),15,0.4f);
             sH.Mask(Color.blue);

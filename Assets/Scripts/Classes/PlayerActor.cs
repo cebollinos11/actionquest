@@ -42,15 +42,26 @@ public class PlayerActor : SpellCaster
    {
 
        base.Die();
+
+       LevelManager.Instance.DisableEnemies();
+
        StartCoroutine(GoToMainMenu());
        
 
    }
 
    IEnumerator GoToMainMenu() {
-       //Time.timeScale = 0.3f;
-       yield return new WaitForSeconds(0.1f);
-       
+       Time.timeScale = 0.7f;
+
+       float ret = 0f ;
+       do
+       {
+           Debug.Log(ret);
+           ret += 0.01f;
+           yield return new WaitForFixedUpdate();
+
+       } while (ret < 1);
+             
        Time.timeScale = 1f;
        Application.LoadLevel("title");
        LevelManager.RestartGame();

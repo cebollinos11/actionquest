@@ -19,8 +19,10 @@ public class cameraFollow : MonoBehaviour {
     }
     void Update()
     {
-        
-        
+
+        if (target == null) {
+            return;
+        }
         //transform.position =  target.position+offset;
         Vector3 tpos = target.position + offset;
 
