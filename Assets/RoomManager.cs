@@ -18,7 +18,7 @@ public class RoomManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        Debug.Log("START OF ROOM");
+        
         spawner = Resources.Load("Prefabs/EnemySpawner") as GameObject;
         PlaceObjects();
         LevelManager.Instance.bui.UpdatePlayer();

@@ -39,7 +39,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b323111bf49b00c4e8e432f1200a71f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 166512, guid: db29038b872b16a42a9b314a296e93c1, type: 2}
+  projectile: {fileID: 177704, guid: db29038b872b16a42a9b314a296e93c1, type: 2}
   numberOfProjectiles: 6
   waitTime: .00999999978
   direction: {x: 0, y: 0, z: 0}
@@ -58,7 +58,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: projectile
       value: 
-      objectReference: {fileID: 166512, guid: db29038b872b16a42a9b314a296e93c1, type: 2}
+      objectReference: {fileID: 177704, guid: db29038b872b16a42a9b314a296e93c1, type: 2}
     - target: {fileID: 0}
       propertyPath: numberOfProjectiles
       value: 6

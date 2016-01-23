@@ -171,7 +171,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!1001 &1429244119
+--- !u!1001 &501809533
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -208,7 +208,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22471514, guid: 293861acb25dc7f47a393fb4ea80d21d, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 22471514, guid: 293861acb25dc7f47a393fb4ea80d21d, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -250,26 +250,13 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 22445750, guid: 293861acb25dc7f47a393fb4ea80d21d, type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22445750, guid: 293861acb25dc7f47a393fb4ea80d21d, type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 166.830002
-      objectReference: {fileID: 0}
-    - target: {fileID: 11465300, guid: 293861acb25dc7f47a393fb4ea80d21d, type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21302436, guid: 86cb6424fc85f334c82cd354bf3c84fd,
-        type: 3}
-    - target: {fileID: 11465300, guid: 293861acb25dc7f47a393fb4ea80d21d, type: 2}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 293861acb25dc7f47a393fb4ea80d21d, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1121245504 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 120540, guid: 293861acb25dc7f47a393fb4ea80d21d, type: 2}
+  m_PrefabInternal: {fileID: 501809533}
 --- !u!1 &1695662421
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1121245504}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
 --- !u!4 &1742050485
@@ -403,4 +390,4 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2

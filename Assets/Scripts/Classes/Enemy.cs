@@ -36,7 +36,7 @@ public class Enemy : Actor {
 	// Use this for initialization
 	public void Start () {
         base.Start();
-        Debug.Log(gameObject.name + " executes start " );
+        
         Player = GameObject.FindGameObjectWithTag("Friendly");
         TargetPosition = transform.position;
         loot = LevelManager.ReturnLoot();   

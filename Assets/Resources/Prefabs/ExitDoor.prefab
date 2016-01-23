@@ -431,7 +431,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106232}
-  m_Text: Press Enter To Continue
+  m_Text: Press any key to continue
   m_OffsetZ: 0
   m_CharacterSize: 2
   m_LineSpacing: 1
@@ -638,6 +638,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.z
       value: -.0500000007
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Text
+      value: Press any key to continue
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

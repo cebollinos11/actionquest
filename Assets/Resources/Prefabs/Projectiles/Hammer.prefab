@@ -197,7 +197,7 @@ MonoBehaviour:
   sprite: {fileID: 21301344, guid: 86cb6424fc85f334c82cd354bf3c84fd, type: 3}
   damage: 3
   speed: 15
-  range: 2
+  range: 4
   cooldown: .5
   direction: {x: 0, y: 0, z: 1}
   tag: 
@@ -229,6 +229,7 @@ MonoBehaviour:
   MoveTime: .100000001
   MoveAnimIntensity: .200000003
   flashTime: .5
+  sR: {fileID: 0}
   spriteOrientation: 1
 --- !u!135 &13544254
 SphereCollider:
@@ -361,7 +362,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: range
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: speed

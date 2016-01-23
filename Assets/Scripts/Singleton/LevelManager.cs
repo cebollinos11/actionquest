@@ -39,7 +39,7 @@ public class LevelManager : Singleton<LevelManager> {
 
         Instance.alreadyInitialized = true;
         DontDestroyOnLoad(Instance.transform.gameObject);
-        Debug.Log("Initializing levelmanager");
+        
         Instance.currentLevel = 1;
 
 
@@ -100,7 +100,7 @@ public class LevelManager : Singleton<LevelManager> {
 
         foreach (GameObject g in Resources.LoadAll("Prefabs/Rooms", typeof(GameObject)))
         {
-            Debug.Log("prefab found: " + g.name);
+            
             Instance.RoomDB.Add(g);
         }
 
@@ -149,7 +149,7 @@ public class LevelManager : Singleton<LevelManager> {
 
 
 
-        Debug.Log("Loading level " + currentLevel.ToString());
+        
 
         
 
@@ -160,9 +160,9 @@ public class LevelManager : Singleton<LevelManager> {
         GameObject instantiatedMap = (GameObject)Instantiate(map);
         instantiatedMap.GetComponent<RoomManager>().Init(currentLevel%3==0);
         //instantiatedMap.GetComponent<RoomManager>().Init(true);
-        currentRoom = instantiatedMap.GetComponent<RoomManager>();  
-
-        Debug.Log("Finish loading");
+        currentRoom = instantiatedMap.GetComponent<RoomManager>();
+        Camera.main.GetComponent<cameraHandler>().ZoomOut();
+        
         
         
 

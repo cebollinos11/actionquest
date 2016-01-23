@@ -5,48 +5,69 @@ using System.Collections;
 public class SpecialManager : MonoBehaviour {
 
     CanvasManager cM;
-
+    SpecialEvent sE;
+    
     bool exitEnabled = false;
 
 	// Use this for initialization
 	void Start () {
 
-        cM = GetComponent<CanvasManager>();
-
-
-        
+        cM = GetComponent<CanvasManager>();        
         Roll();
 	
 	}
 
+    public void ClickedContinue() {
+
+        cM.ContinueButton.enabled = false;
+        Exit();
+    }
+
     void Roll()
     {
-        if (Random.Range(1,100)>50)
-        {
 
-            cM.MainText.text = "You level up!";
-            LevelManager.Instance.Player.GetComponent<Actor>().maxHP += 1;
-            LevelManager.Instance.bui.UpdatePlayer();
+        //if (Random.Range(1, 100) > 50)
+        //{
+        //    cM.MainText.text = "";
+        //    cM.SetMainImage(LevelManager.Instance.Player.GetComponent<PlayerActor>().sH.GetComponent<SpriteRenderer>().sprite);
+        //    StartCoroutine(EnableExit());
+        //    return;        
+        //}
+
+
+
+        //if (Random.Range(1,100)>50)
+        //{
+        //    cM.MainText.text = "You level up!";
+        //    LevelManager.Instance.Player.GetComponent<Actor>().maxHP += 1;
+        //    LevelManager.Instance.bui.UpdatePlayer();
             
-        }
+        //}
 
-        else {
+        //else {
 
-            cM.MainText.text = "You find a new weapon";
-            GameObject newWeapon =  LevelManager.Instance.WeaponDB[Random.Range(0, LevelManager.Instance.WeaponDB.Count)];
-            Weapon newWeaponScript = newWeapon.GetComponent<Weapon>();
-            cM.SetMainImage(newWeaponScript.sprite);
-            LevelManager.Instance.Player.GetComponent<PlayerActor>().equippedWeapon = newWeaponScript;
-            if (newWeaponScript == null) {
-                Debug.Log("Problems here");
-                Debug.Log(newWeapon.name);
-            }
+        //    cM.MainText.text = "You find a new weapon";
+        //    GameObject newWeapon =  LevelManager.Instance.WeaponDB[Random.Range(0, LevelManager.Instance.WeaponDB.Count)];
+        //    Weapon newWeaponScript = newWeapon.GetComponent<Weapon>();
+        //    cM.SetMainImage(newWeaponScript.sprite);
+        //    LevelManager.Instance.Player.GetComponent<PlayerActor>().equippedWeapon = newWeaponScript;
+        //    if (newWeaponScript == null) {
+               
+        //        Debug.Log(newWeapon.name);
+        //    }
 
 
         
-        }
+        //}
 
-        StartCoroutine(EnableExit());
+        //StartCoroutine(EnableExit());
+
+        GameObject sEobject = (GameObject)Resources.Load("Prefabs/SpecialEvents/HealUp");
+        GameObject sEGobject = Instantiate(sEobject) as GameObject;
+        sE = sEGobject.GetComponent<SpecialEvent>();
+        sE.PlaceIt(cM);
+
+
     }
 
     IEnumerator EnableExit() {
@@ -58,7 +79,7 @@ public class SpecialManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetButtonDown("Jump") && exitEnabled)
+        if (exitEnabled && (Input.GetButtonDown("AttackW") ||Input.GetButtonDown("AttackE") ||Input.GetButtonDown("AttackN") ||Input.GetButtonDown("AttackS")))
         {
             Exit();
         }

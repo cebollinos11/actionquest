@@ -183,7 +183,7 @@ MonoBehaviour:
   currHP: 0
   speed: 100
   maxSpeed: 10
-  jumpPower: 10
+  jumpPower: 20
   isTouchingFloor: 0
   rB: {fileID: 0}
   sH: {fileID: 0}
@@ -192,7 +192,7 @@ MonoBehaviour:
   particleOnHit: {fileID: 0}
   warCrySound: {fileID: 8300000, guid: 643eeb038acdeed4eb17a1c9c44f09ad, type: 3}
   noMelee: 0
-  meleeDash: 50
+  meleeDash: 40
   currentMode: 0
   TargetPosition: {x: 0, y: 0, z: 0}
   attackFreq: 2
@@ -268,7 +268,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: jumpPower
-      value: 40
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: warCrySound
@@ -296,7 +296,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: meleeDash
-      value: 50
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: startingWeapon

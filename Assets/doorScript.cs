@@ -35,7 +35,7 @@ public class doorScript : MonoBehaviour {
 
         }
 
-        if (opened && insideSphere && (Input.GetButtonDown("AttackW") ||Input.GetButtonDown("AttackS") ||Input.GetButtonDown("AttackN") ||Input.GetButtonDown("AttackS")  ))
+        if (opened && insideSphere && (Input.GetButtonDown("AttackW") ||Input.GetButtonDown("AttackE") ||Input.GetButtonDown("AttackN") ||Input.GetButtonDown("AttackS")  ))
         {
             enabled = false;
             StartCoroutine(TransitionToNextLevel());
@@ -45,8 +45,8 @@ public class doorScript : MonoBehaviour {
 
     IEnumerator TransitionToNextLevel() {
 
-        //Camera.main.GetComponent<cameraHandler>().ZoomIn();
-        Camera.main.GetComponent<cameraHandler>().FadeOut();
+        Camera.main.GetComponent<cameraHandler>().ZoomIn();
+        //Camera.main.GetComponent<cameraHandler>().FadeOut();
         yield return new WaitForSeconds(1f);
         LevelManager.FinishLevel();
         //Camera.main.GetComponent<cameraHandler>().ZoomOut();
