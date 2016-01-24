@@ -8,9 +8,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 403788}
-  - 114: {fileID: 11441636}
+  - 114: {fileID: 11495326}
   m_Layer: 0
-  m_Name: MoneyUp
+  m_Name: HealUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11441636
+--- !u!114 &11495326
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -36,12 +36,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 188878}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ddbbd03b0b370f47a13fffc64bae662, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c36e0810daaaa34883efa2cb2c39fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainText: Treasure Found
-  secondaryText: '...'
-  MainSprite: {fileID: 21302418, guid: 86cb6424fc85f334c82cd354bf3c84fd, type: 3}
+  mainText: Holy water
+  secondaryText: Your health points are restored!
+  MainSprite: {fileID: 21302820, guid: 86cb6424fc85f334c82cd354bf3c84fd, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -51,16 +51,16 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: mainText
-      value: Treasure Found
+      value: Holy water
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: MainSprite
       value: 
-      objectReference: {fileID: 21302418, guid: 86cb6424fc85f334c82cd354bf3c84fd,
+      objectReference: {fileID: 21302820, guid: 86cb6424fc85f334c82cd354bf3c84fd,
         type: 3}
     - target: {fileID: 0}
       propertyPath: secondaryText
-      value: '...'
+      value: Your health points are restored!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
