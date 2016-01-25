@@ -71,7 +71,7 @@ public class SpecialManager : MonoBehaviour {
 
         //StartCoroutine(EnableExit());
 
-        GameObject sEobject = (GameObject)Resources.Load("Prefabs/SpecialEvents/FountainEvent");
+        GameObject sEobject = (GameObject)Resources.Load("Prefabs/SpecialEvents/ShoesFound");
         GameObject sEGobject = Instantiate(sEobject) as GameObject;
         sE = sEGobject.GetComponent<SpecialEvent>();
         sE.PlaceIt(cM);
@@ -92,11 +92,7 @@ public class SpecialManager : MonoBehaviour {
 
     }
 
-    IEnumerator EnableExit() {
-        yield return new WaitForSeconds(1f);
-        exitEnabled = true;
-        cM.ExitText.enabled = true;
-    }
+   
 
 	// Update is called once per frame
 	void Update () {

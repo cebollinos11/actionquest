@@ -23,8 +23,19 @@ public class Actor : MonoBehaviour {
 
     int MoveBlocked;
 
-    
 
+    public void IDmaxSpeed(int direction) {
+
+        int increment = 1;
+        maxSpeed += increment * direction;
+
+        if (maxSpeed < 14)
+        {
+            maxSpeed = 14;
+        }
+        
+    
+    }
     
     public AudioClip soundSteps;
     [HideInInspector]public float stepsFreq = 0.7f;
@@ -211,6 +222,16 @@ public class Actor : MonoBehaviour {
         if (currHP > maxHP) {
             currHP = maxHP;
         }
+    }
+
+
+    public void TakeNonLethalDamage(float dmg) {
+
+
+        currHP -= (int)dmg;
+        if (currHP < 1f) {
+            currHP = 1f;
+            }
     }
 
     public virtual void TakeDamage(float dmg, Vector3 dir)

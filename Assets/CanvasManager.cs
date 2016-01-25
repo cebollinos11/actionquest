@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class CanvasManager : MonoBehaviour {
 
     public Text MainText;
-    public Text ExitText;
+    
     public Text SecondaryText;
     public Image MainImage;
     public Button ContinueButton;
@@ -14,7 +14,7 @@ public class CanvasManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        ExitText.enabled = false;
+        
         ContinueButton.gameObject.SetActive(false);
 	}
 
