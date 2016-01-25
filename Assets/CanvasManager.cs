@@ -9,6 +9,7 @@ public class CanvasManager : MonoBehaviour {
     public Text SecondaryText;
     public Image MainImage;
     public Button ContinueButton;
+    public GameObject twoOptionButtons;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +17,10 @@ public class CanvasManager : MonoBehaviour {
         ExitText.enabled = false;
         ContinueButton.gameObject.SetActive(false);
 	}
+
+    public void VisibilityOfTwoButtons(bool on) {
+        twoOptionButtons.SetActive(on);
+    }
 
     public IEnumerator DelayShowContinue() {
 

@@ -87,13 +87,13 @@ public class cameraHandler : MonoBehaviour {
             float newPosition = Mathf.SmoothDamp(cam.fieldOfView, targetSize, ref yVelocity, zoomTime);
             //newPosition = Mathf.Lerp(cam.fieldOfView, targetSize, 0.5f);
             cam.fieldOfView = newPosition;
-            Debug.Log("In the mix" + cam.fieldOfView + " vs"+ targetSize);
+            
 
             yield return new WaitForEndOfFrame();
         }
 
         while (cam.fieldOfView - targetSize < -0.01f);
-        Debug.Log("Finished CO");
+        
     }
 
 

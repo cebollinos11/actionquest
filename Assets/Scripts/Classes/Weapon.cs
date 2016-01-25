@@ -3,8 +3,10 @@ using System.Collections;
 
 public class Weapon : MonoBehaviour {
 
+    public string name;
     public GameObject projectile;
     public Sprite sprite;
+    
 
     public float damageBonus;
 

@@ -23,6 +23,15 @@ public class SpecialManager : MonoBehaviour {
         Exit();
     }
 
+    //public virtual void EffectOnClick1() { 
+    
+    //}
+
+    //public virtual void EffectOnClick2()
+    //{
+
+    //}
+
     void Roll()
     {
 
@@ -62,11 +71,24 @@ public class SpecialManager : MonoBehaviour {
 
         //StartCoroutine(EnableExit());
 
-        GameObject sEobject = (GameObject)Resources.Load("Prefabs/SpecialEvents/HealUp");
+        GameObject sEobject = (GameObject)Resources.Load("Prefabs/SpecialEvents/FountainEvent");
         GameObject sEGobject = Instantiate(sEobject) as GameObject;
         sE = sEGobject.GetComponent<SpecialEvent>();
         sE.PlaceIt(cM);
 
+
+    }
+
+    public  void Option1Clicked() {
+        sE.OnClick1();
+        cM.VisibilityOfTwoButtons(false);
+        
+        
+    }
+
+    public  void Option2Clicked() {
+        sE.OnClick2();
+        cM.VisibilityOfTwoButtons(false);
 
     }
 

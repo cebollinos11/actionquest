@@ -191,6 +191,7 @@ public class SpriteHandler : MonoBehaviour {
     }
 
     public void RunDie() {
+        Mask(Color.black);
         sR.material.SetFloat("_MaskAmount", 0.5f);
         StopAllCoroutines();
         StartCoroutine(Die());

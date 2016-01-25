@@ -39,6 +39,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aafeb13f728f45449aef99bca0b6183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Hammer
   projectile: {fileID: 166512, guid: c86dd0e3363474f4f881485d0cca2cae, type: 2}
   sprite: {fileID: 21301344, guid: 86cb6424fc85f334c82cd354bf3c84fd, type: 3}
   damageBonus: 0
@@ -58,6 +59,10 @@ Prefab:
       propertyPath: projectile
       value: 
       objectReference: {fileID: 166512, guid: c86dd0e3363474f4f881485d0cca2cae, type: 2}
+    - target: {fileID: 0}
+      propertyPath: name
+      value: Hammer
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 196620}

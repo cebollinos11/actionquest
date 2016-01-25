@@ -5,11 +5,14 @@ Mage
 Soldier
 Assassin
 Hustler
+Hunter
 
 Player upgrades:
 * walking speed
 * max hp
-* all weapon stats
+* all weapon stats (damage, range, fire rate)
+* dash speed
+
 
 Projectiles
 * Frozen bolts: Freeze an actor temporarily
@@ -44,5 +47,25 @@ Special Enemies:
 * Jellyfish: Summon jellyfish babies
 
 Basic Enemies
-* Rat: Jumps at player
-* Skeleton, Soldier, Guard
+* Jumpy - Rat, jelly
+* Melee - Skeleton, Soldier, Guard
+* static - eye family
+
+Special Encounters
+
+- 2 Choices
+**Find new weapon
+Magic Fountain, regain hp, I/D max hp
+Thanks mr skeleton - Get coins if you say thanks mr skeletal
+
+Magic Mirror, improve dash
+Magic Lamp, get new weapon or money
+Bribe guards
+Devil - Pact with the devil (hp = 1, level up like crazy)
+Dark mage - Transforms you into a rat/frog if you don't pay
+Strange potion - Increase/decrease player speed
+
+- No choice
+Find money
+
+

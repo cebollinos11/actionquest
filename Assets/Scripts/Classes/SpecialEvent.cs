@@ -10,7 +10,18 @@ public class SpecialEvent : MonoBehaviour {
     public string secondaryText;
     public Sprite MainSprite;
     protected PlayerController pC;
+    protected CanvasManager cM;
 
+
+    public virtual void OnClick1() {
+        cM.StartCoroutine(cM.DelayShowContinue());
+    
+    }
+
+    public virtual void OnClick2() {
+
+        cM.StartCoroutine(cM.DelayShowContinue());
+    }
     
 
     public virtual void OnReceive()
@@ -18,21 +29,13 @@ public class SpecialEvent : MonoBehaviour {
         
     }
 
-    public virtual void PlaceIt(CanvasManager cM) {
+    public virtual void PlaceIt(CanvasManager cMa) {
         pC = LevelManager.Instance.Player.GetComponent<PlayerController>();
+        cM = cMa;
         cM.SetMainText(mainText);
         cM.SetSecondaryText(secondaryText);
         cM.SetMainImage(MainSprite);
     
     }
 
-    // Use this for initialization
-	void Start () {
-	    
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
