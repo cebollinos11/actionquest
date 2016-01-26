@@ -35,43 +35,11 @@ public class SpecialManager : MonoBehaviour {
     void Roll()
     {
 
-        //if (Random.Range(1, 100) > 50)
-        //{
-        //    cM.MainText.text = "";
-        //    cM.SetMainImage(LevelManager.Instance.Player.GetComponent<PlayerActor>().sH.GetComponent<SpriteRenderer>().sprite);
-        //    StartCoroutine(EnableExit());
-        //    return;        
-        //}
 
+        GameObject sEobject = (GameObject)Resources.Load("Prefabs/SpecialEvents/TransformMage");
 
+        sEobject = LevelManager.Instance.SpecialEventsDB[Random.Range(0, LevelManager.Instance.SpecialEventsDB.Count)];        
 
-        //if (Random.Range(1,100)>50)
-        //{
-        //    cM.MainText.text = "You level up!";
-        //    LevelManager.Instance.Player.GetComponent<Actor>().maxHP += 1;
-        //    LevelManager.Instance.bui.UpdatePlayer();
-            
-        //}
-
-        //else {
-
-        //    cM.MainText.text = "You find a new weapon";
-        //    GameObject newWeapon =  LevelManager.Instance.WeaponDB[Random.Range(0, LevelManager.Instance.WeaponDB.Count)];
-        //    Weapon newWeaponScript = newWeapon.GetComponent<Weapon>();
-        //    cM.SetMainImage(newWeaponScript.sprite);
-        //    LevelManager.Instance.Player.GetComponent<PlayerActor>().equippedWeapon = newWeaponScript;
-        //    if (newWeaponScript == null) {
-               
-        //        Debug.Log(newWeapon.name);
-        //    }
-
-
-        
-        //}
-
-        //StartCoroutine(EnableExit());
-
-        GameObject sEobject = (GameObject)Resources.Load("Prefabs/SpecialEvents/ShoesFound");
         GameObject sEGobject = Instantiate(sEobject) as GameObject;
         sE = sEGobject.GetComponent<SpecialEvent>();
         sE.PlaceIt(cM);

@@ -20,6 +20,8 @@ public class LevelManager : Singleton<LevelManager> {
     public List<GameObject> LootDB;
     [HideInInspector]
     public List<GameObject> WeaponDB;
+    [HideInInspector]
+    public List<GameObject> SpecialEventsDB;
 
     [HideInInspector]
     public BattleUI bui;
@@ -96,6 +98,12 @@ public class LevelManager : Singleton<LevelManager> {
         {
             
             Instance.LootDB.Add(g);
+        }
+
+        foreach (GameObject g in Resources.LoadAll("Prefabs/SpecialEvents", typeof(GameObject)))
+        {
+
+            Instance.SpecialEventsDB.Add(g);
         }
 
         foreach (GameObject g in Resources.LoadAll("Prefabs/Rooms", typeof(GameObject)))

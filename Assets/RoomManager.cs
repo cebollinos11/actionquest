@@ -61,7 +61,7 @@ public class RoomManager : MonoBehaviour {
         Debug.Log("room started");
 
         //enemies
-        int nEnemies = LevelManager.Instance.currentLevel*2;
+        int nEnemies = LevelManager.Instance.currentLevel+1;
 
         if (isBossRoom)
         {
