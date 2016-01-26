@@ -8,9 +8,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 403788}
-  - 114: {fileID: 11481112}
+  - 114: {fileID: 11441636}
   m_Layer: 0
-  m_Name: FrogEvent
+  m_Name: MoneyUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11481112
+--- !u!114 &11441636
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -36,12 +36,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 188878}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a178446ff1d0292489ba008d86f15214, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ddbbd03b0b370f47a13fffc64bae662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainText: You encounter a toad
-  secondaryText: would you kiss it?
-  MainSprite: {fileID: 21300256, guid: 86cb6424fc85f334c82cd354bf3c84fd, type: 3}
+  mainText: Treasure Found
+  secondaryText: '...'
+  MainSprite: {fileID: 21302418, guid: 86cb6424fc85f334c82cd354bf3c84fd, type: 3}
   sM: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
@@ -52,16 +52,16 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: mainText
-      value: You encounter a toad
+      value: Treasure Found
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: MainSprite
       value: 
-      objectReference: {fileID: 21300256, guid: 86cb6424fc85f334c82cd354bf3c84fd,
+      objectReference: {fileID: 21302418, guid: 86cb6424fc85f334c82cd354bf3c84fd,
         type: 3}
     - target: {fileID: 0}
       propertyPath: secondaryText
-      value: would you kiss it?
+      value: '...'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Enemy : Actor {
 
+    public bool instantPrefab;
+
 
     public enum EnemyMode {     
         wander,aggro

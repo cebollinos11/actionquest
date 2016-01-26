@@ -22,6 +22,8 @@ public class LevelManager : Singleton<LevelManager> {
     public List<GameObject> WeaponDB;
     [HideInInspector]
     public List<GameObject> SpecialEventsDB;
+    [HideInInspector]
+    public int specialEventIndex;
 
     [HideInInspector]
     public BattleUI bui;
@@ -105,6 +107,8 @@ public class LevelManager : Singleton<LevelManager> {
 
             Instance.SpecialEventsDB.Add(g);
         }
+
+        Instance.ShuffleSpecial();
 
         foreach (GameObject g in Resources.LoadAll("Prefabs/Rooms", typeof(GameObject)))
         {
@@ -240,6 +244,30 @@ public class LevelManager : Singleton<LevelManager> {
         }
         
     
+    }
+
+    public void ShuffleSpecial() {
+        SpecialEventsDB = Fisher_Yates_CardDeck_Shuffle(SpecialEventsDB);
+    }
+    public static List<GameObject> Fisher_Yates_CardDeck_Shuffle(List<GameObject> aList)
+    {
+
+        System.Random _random = new System.Random();
+
+        GameObject myGO;
+
+        int n = aList.Count;
+        for (int i = 0; i < n; i++)
+        {
+            // NextDouble returns a random number between 0 and 1.
+            // ... It is equivalent to Math.random() in Java.
+            int r = i + (int)(_random.NextDouble() * (n - i));
+            myGO = aList[r];
+            aList[r] = aList[i];
+            aList[i] = myGO;
+        }
+
+        return aList;
     }
 
 	

@@ -1,15 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &115092
+--- !u!1 &103264
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 414462}
-  - 212: {fileID: 21250870}
-  - 114: {fileID: 11444350}
+  - 4: {fileID: 420556}
+  - 54: {fileID: 5466934}
+  - 135: {fileID: 13568336}
+  m_Layer: 0
+  m_Name: BlankEnemy
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &145360
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 493438}
+  - 212: {fileID: 21203124}
+  - 114: {fileID: 11401054}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -17,85 +34,67 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &143244
+--- !u!1 &177148
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 424038}
-  - 33: {fileID: 3364694}
-  - 23: {fileID: 2321420}
+  - 4: {fileID: 419848}
+  - 33: {fileID: 3307124}
+  - 23: {fileID: 2344940}
   m_Layer: 0
-  m_Name: Shadow
+  m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &172162
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 468762}
-  - 54: {fileID: 5422090}
-  - 135: {fileID: 13513476}
-  - 114: {fileID: 11481586}
-  m_Layer: 0
-  m_Name: Jelly
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &414462
+--- !u!4 &419848
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 115092}
-  m_LocalRotation: {x: .382683456, y: 0, z: 0, w: .923879504}
-  m_LocalPosition: {x: 0, y: -1, z: -1.01999998}
-  m_LocalScale: {x: 10, y: 10, z: 10}
-  m_Children: []
-  m_Father: {fileID: 468762}
-  m_RootOrder: 0
---- !u!4 &424038
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 143244}
+  m_GameObject: {fileID: 177148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -.5}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
-  m_Father: {fileID: 468762}
+  m_Father: {fileID: 420556}
   m_RootOrder: 1
---- !u!4 &468762
+--- !u!4 &420556
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 172162}
+  m_GameObject: {fileID: 103264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.6122551, y: 17.7000008, z: 21.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 414462}
-  - {fileID: 424038}
+  - {fileID: 493438}
+  - {fileID: 419848}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2321420
+--- !u!4 &493438
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145360}
+  m_LocalRotation: {x: .382683456, y: 0, z: 0, w: .923879504}
+  m_LocalPosition: {x: 0, y: -1, z: -1.01999998}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_Children: []
+  m_Father: {fileID: 420556}
+  m_RootOrder: 0
+--- !u!23 &2344940
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 143244}
+  m_GameObject: {fileID: 177148}
   m_Enabled: 1
   m_CastShadows: 3
   m_ReceiveShadows: 1
@@ -114,19 +113,19 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3364694
+--- !u!33 &3307124
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 143244}
+  m_GameObject: {fileID: 177148}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &5422090
+--- !u!54 &5466934
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 172162}
+  m_GameObject: {fileID: 103264}
   serializedVersion: 2
   m_Mass: 80
   m_Drag: 0
@@ -136,12 +135,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &11444350
+--- !u!114 &11401054
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 115092}
+  m_GameObject: {fileID: 145360}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2c3de587823d694a8aba29fbe3d45c8, type: 3}
@@ -152,55 +151,24 @@ MonoBehaviour:
   flashTime: .5
   sR: {fileID: 0}
   spriteOrientation: 1
---- !u!114 &11481586
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 172162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a696d26a886c68488b5cc7d27796488, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 3
-  currHP: 0
-  speed: 100
-  maxSpeed: 10
-  jumpPower: 30
-  isTouchingFloor: 0
-  rB: {fileID: 0}
-  sH: {fileID: 0}
-  soundSteps: {fileID: 0}
-  stepsFreq: .699999988
-  particleOnHit: {fileID: 0}
-  instantPrefab: 0
-  warCrySound: {fileID: 8300000, guid: 24eb31e7398b48d479d26c6982037935, type: 3}
-  noMelee: 0
-  meleeDash: 2
-  currentMode: 0
-  TargetPosition: {x: 0, y: 0, z: 0}
-  attackFreq: 2
-  Player: {fileID: 0}
-  startingWeapon: {fileID: 0}
---- !u!135 &13513476
+--- !u!135 &13568336
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 172162}
+  m_GameObject: {fileID: 103264}
   m_Material: {fileID: 13400000, guid: eeedeb7b3039b234391944b3c896d34e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!212 &21250870
+--- !u!212 &21203124
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 115092}
+  m_GameObject: {fileID: 145360}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -219,7 +187,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300294, guid: 86cb6424fc85f334c82cd354bf3c84fd, type: 3}
+  m_Sprite: {fileID: 21303174, guid: 86cb6424fc85f334c82cd354bf3c84fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -227,49 +195,8 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: attackFreq
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300294, guid: 86cb6424fc85f334c82cd354bf3c84fd,
-        type: 3}
-    - target: {fileID: 0}
-      propertyPath: m_SortingOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: jumpPower
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: meleeDash
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8d711628ec6f52a4897678b1e2567041, type: 2}
-    - target: {fileID: 0}
-      propertyPath: maxHP
-      value: 3
-      objectReference: {fileID: 0}
+    m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 172162}
+  m_RootGameObject: {fileID: 103264}
   m_IsPrefabParent: 1

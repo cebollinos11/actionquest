@@ -175,6 +175,7 @@ MonoBehaviour:
   soundSteps: {fileID: 0}
   stepsFreq: .699999988
   particleOnHit: {fileID: 0}
+  instantPrefab: 0
   warCrySound: {fileID: 8300000, guid: f7507c96631c03148bcbadbd89089050, type: 3}
   noMelee: 0
   meleeDash: 33

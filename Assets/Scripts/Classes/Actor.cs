@@ -62,8 +62,9 @@ public class Actor : MonoBehaviour {
 
     public void Start() {
 
-        
 
+       
+        
         currHP = maxHP;
 
         rB = GetComponent<Rigidbody>();

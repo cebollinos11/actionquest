@@ -11,6 +11,9 @@ public class SpecialEvent : MonoBehaviour {
     public Sprite MainSprite;
     protected PlayerController pC;
     protected CanvasManager cM;
+    public SpecialManager sM;
+
+    
 
 
     public virtual void OnClick1() {
@@ -36,6 +39,16 @@ public class SpecialEvent : MonoBehaviour {
         cM.SetSecondaryText(secondaryText);
         cM.SetMainImage(MainSprite);
     
+    }
+
+
+    protected void PlaySuccess() {
+        sM.PlayClip(sM.successMusic);
+    
+    }
+
+    protected void PlayFail() {
+        sM.PlayClip(sM.failMusic);
     }
 
 }
