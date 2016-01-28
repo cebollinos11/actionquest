@@ -22,7 +22,7 @@ public class SpellAimer : MonoBehaviour {
 	}
 
     public void turnOn(bool onOrOff){
-        if (onOrOff) {
+        if (onOrOff ) {
             gameObject.SetActive(true);
         }
 

@@ -8,6 +8,7 @@ public class Boss : EnemySpellcaster {
         base.Start();
         loot = (GameObject)Resources.Load("Prefabs/Features/Chest");
         GeneralUI.Instance.ShowMessage("Prepare to fight!");
+        noKnockBack = true;
     }
 
 	

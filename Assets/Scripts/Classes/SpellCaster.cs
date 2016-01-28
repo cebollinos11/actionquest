@@ -22,7 +22,8 @@ public class SpellCaster : Actor {
         if (magicCharge > magicChargeLimit)
         {
             if (!canCastSpecial) {
-                sH.Flash(Color.cyan,1);
+                //sH.Flash(Color.cyan,1);
+                sH.Mask(Color.green);
                 AudioManager.PlaySpecific(magicReadyClip);
             }
             canCastSpecial = true;
@@ -58,7 +59,7 @@ public class SpellCaster : Actor {
     public void CastSpell(Spell spellToCast, Vector3 direction)
     {
         sH.StartMoveAnimation(SpriteHandler.AnimationType.attack);
-        sH.Flash(Color.white, 1);
+        sH.Mask(Color.green);
         magicCharge = 0f;
         checkCanCast();
         spellToCast.Cast(this.gameObject, direction);

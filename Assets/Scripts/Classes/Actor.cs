@@ -23,6 +23,9 @@ public class Actor : MonoBehaviour {
 
     int MoveBlocked;
 
+    [HideInInspector]
+    public bool noKnockBack;
+
 
     public void IDmaxSpeed(int direction) {
 
@@ -195,7 +198,10 @@ public class Actor : MonoBehaviour {
             Actor goActor = col.gameObject.GetComponent<Actor>();
             Vector3 dir = col.transform.position - transform.position;
             goActor.TakeDamage(1,dir);
-            goActor.Push(dir,3,0.5f);
+            goActor.Push(dir, 3, 0.5f);
+                
+            
+                
                 
           
         }
@@ -247,7 +253,9 @@ public class Actor : MonoBehaviour {
         //sH.Flash(Color.white, 1);
         sH.Mask(Color.white);
         sH.StartMoveAnimation(SpriteHandler.AnimationType.walk);
-        rB.velocity += dir * 10;
+
+        if(!noKnockBack) //apply knockback
+            rB.velocity += dir * 10;
 
         currHP -= dmg;
         if (currHP < 1)

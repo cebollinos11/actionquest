@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 460444}
-  - 114: {fileID: 11479406}
+  - 114: {fileID: 11414324}
   m_Layer: 0
   m_Name: CrossOfDeath
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11479406
+--- !u!114 &11414324
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -36,12 +36,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 151994}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07f6b66521bc304459237fc5ff41dd0b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9490596ab945f7f4a93b5ae685609de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Magic Dagger
-  toInstantiate: {fileID: 166512, guid: c86dd0e3363474f4f881485d0cca2cae, type: 2}
-  soundOnCast: {fileID: 8300000, guid: 9fbf3d3bfee716044bac80102103f6c3, type: 3}
+  toInstantiate: {fileID: 0}
+  soundOnCast: {fileID: 8300000, guid: de065b2092f93eb42b3c77092b484e05, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -52,15 +51,27 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: toInstantiate
       value: 
-      objectReference: {fileID: 166512, guid: c86dd0e3363474f4f881485d0cca2cae, type: 2}
+      objectReference: {fileID: 154458, guid: fc74ddecf57a8b4469eaf1bd50484ed2, type: 2}
     - target: {fileID: 0}
       propertyPath: name
-      value: Magic Dagger
+      value: Magic Fan
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: soundOnCast
       value: 
-      objectReference: {fileID: 8300000, guid: 9fbf3d3bfee716044bac80102103f6c3, type: 3}
+      objectReference: {fileID: 8300000, guid: de065b2092f93eb42b3c77092b484e05, type: 3}
+    - target: {fileID: 0}
+      propertyPath: numberOfProjectiles
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: waitTime
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 166512, guid: 53bbff7ffcb414f41aa6bfa9d462c6f8, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 151994}

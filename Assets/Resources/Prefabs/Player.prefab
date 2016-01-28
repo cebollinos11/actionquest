@@ -290,11 +290,12 @@ MonoBehaviour:
   isTouchingFloor: 0
   rB: {fileID: 0}
   sH: {fileID: 0}
+  noKnockBack: 0
   soundSteps: {fileID: 8300000, guid: ae2510032d5a1de41a013cb1ea359d58, type: 3}
   stepsFreq: .300000012
   particleOnHit: {fileID: 0}
   basicSpell: {fileID: 151994, guid: dcebb7b17d86efd4cb94c2cb86e49c2e, type: 2}
-  specialSpell: {fileID: 151994, guid: 7a330c8eb74200f488489a8f223bf340, type: 2}
+  specialSpell: {fileID: 151994, guid: df5d8af6c27ba5c4bbe702c03b16c53d, type: 2}
   StartingWeapon: {fileID: 196620, guid: fa49b75195edeb645884198f14830652, type: 2}
   equippedWeapon: {fileID: 0}
   lastDirection: {x: 0, y: 0, z: 0}
@@ -419,6 +420,10 @@ Prefab:
       propertyPath: maxHP
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: specialSpell
+      value: 
+      objectReference: {fileID: 151994, guid: df5d8af6c27ba5c4bbe702c03b16c53d, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 139314}

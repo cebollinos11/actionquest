@@ -44,11 +44,13 @@ public class SpecialEvent : MonoBehaviour {
 
     protected void PlaySuccess() {
         sM.PlayClip(sM.successMusic);
+        LevelManager.Instance.bui.UpdatePlayer();
     
     }
 
     protected void PlayFail() {
         sM.PlayClip(sM.failMusic);
+        LevelManager.Instance.bui.UpdatePlayer();
     }
 
 }

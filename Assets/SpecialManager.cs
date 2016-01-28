@@ -31,6 +31,7 @@ public class SpecialManager : MonoBehaviour {
         cM = GetComponent<CanvasManager>();
         PlayClip(tensionMusic);
         Roll();
+        LevelManager.Instance.Player.transform.position = Vector3.zero;
 	
 	}
 

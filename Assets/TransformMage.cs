@@ -3,10 +3,12 @@ using System.Collections;
 
 public class TransformMage : DoubleOptionEvent {
 
+    public Sprite princeSprite;
+
 
     public override void OnClick1()
     {
-        if (Random.Range(0, 100) < 50)
+        if (Random.Range(0, 100) < 0)
         {
             
             secondaryText = "Ewww! Kissing a frog? You lose 1 hp";
@@ -18,8 +20,9 @@ public class TransformMage : DoubleOptionEvent {
         else
         {
             int coins = 20;
-            mainText = "The frog turns into a prince!";
-            secondaryText = "Thanks for the help! Take this money, you can use it to take some make out lessons. "+coins.ToString()+" added to the inventory";
+            MainSprite = princeSprite;
+            mainText = "The frog turns into a princess!";
+            secondaryText = "Thanks for breaking the curse! Take this money, you can use it to take some make out lessons. "+coins.ToString()+" added to the inventory";
             pC.coins += coins;
             //LevelManager.Instance.Player.GetComponent<Actor>().sH.GetComponent<SpriteRenderer>().sprite = MainSprite;
             PlaySuccess();

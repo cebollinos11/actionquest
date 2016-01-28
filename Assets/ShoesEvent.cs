@@ -18,13 +18,14 @@ public class ShoesEvent : DoubleOptionEvent {
 
         if (die < 40) {
             
-            secondaryText = "You look amazing on those babies! Self-confidence increased!";
+            secondaryText = "You look fabulous! Self-confidence increased!";
+            PlaySuccess();
         }
 
         else if(die<75){
             pC.IDmaxSpeed(1);
             secondaryText = "Those were magic boots! Speed increased to "+pC.maxSpeed.ToString()+ "!";
-            
+            PlaySuccess();
         
         
         }
@@ -33,7 +34,7 @@ public class ShoesEvent : DoubleOptionEvent {
         {
             pC.IDmaxSpeed(-1);
             secondaryText = "Those boots are too heavy! Speed decreased to " + pC.maxSpeed.ToString() + "!";
-        
+            PlayFail();
         }
         
         base.OnClick1();

@@ -12,9 +12,9 @@ public class MagicFountainEvent : DoubleOptionEvent {
 
         if (die < 50) {
 
-            float n = Random.Range(1, pC.maxHP);
+            float n = Random.Range(1, (int)pC.maxHP/3);
 
-            secondaryText = "The holy water heals you!";
+            secondaryText = "The holy water heals "+n+" hit points!";
             pC.HealDamage(n);
             PlaySuccess();
             
@@ -33,8 +33,9 @@ public class MagicFountainEvent : DoubleOptionEvent {
 
         else if (die < 90)
         {
-            secondaryText = "The magic water give you powers! Your max HP is increased!";
+            secondaryText = "You feel more powerful! Your max HP is increased!";
             pC.maxHP++;
+            
             PlaySuccess();
         }
 
@@ -42,6 +43,10 @@ public class MagicFountainEvent : DoubleOptionEvent {
         {
             secondaryText = "The water is cursed! Your max HP is decreased!";
             pC.maxHP--;
+            if (pC.maxHP < 1)
+                pC.maxHP = 1;
+            if (pC.maxHP < pC.currHP)
+                pC.currHP = pC.maxHP;
             PlayFail();
         }
 

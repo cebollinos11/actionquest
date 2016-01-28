@@ -42,6 +42,7 @@ MonoBehaviour:
   mainText: You find a pair of boots in the floor
   secondaryText: Do you try them on?
   MainSprite: {fileID: 21302378, guid: 86cb6424fc85f334c82cd354bf3c84fd, type: 3}
+  sM: {fileID: 0}
   multiSprite:
   - {fileID: 21302364, guid: 86cb6424fc85f334c82cd354bf3c84fd, type: 3}
   - {fileID: 21302366, guid: 86cb6424fc85f334c82cd354bf3c84fd, type: 3}
