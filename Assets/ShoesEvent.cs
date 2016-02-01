@@ -23,7 +23,7 @@ public class ShoesEvent : DoubleOptionEvent {
         }
 
         else if(die<75){
-            pC.IDmaxSpeed(1);
+            pC.IDmaxSpeed(2);
             secondaryText = "Those were magic boots! Speed increased to "+pC.maxSpeed.ToString()+ "!";
             PlaySuccess();
         
@@ -32,7 +32,7 @@ public class ShoesEvent : DoubleOptionEvent {
 
         else if (die < 101)
         {
-            pC.IDmaxSpeed(-1);
+            pC.IDmaxSpeed(-2);
             secondaryText = "Those boots are too heavy! Speed decreased to " + pC.maxSpeed.ToString() + "!";
             PlayFail();
         }

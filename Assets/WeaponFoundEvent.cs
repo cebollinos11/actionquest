@@ -24,6 +24,7 @@ public class WeaponFoundEvent : DoubleOptionEvent {
     public override void OnClick1()
     {
         mainText = "";
+        PlaySuccess();
         secondaryText = "You take it! Ready to kick ass";
         LevelManager.Instance.Player.GetComponent<PlayerActor>().equippedWeapon = newWeaponScript;
         base.OnClick1();

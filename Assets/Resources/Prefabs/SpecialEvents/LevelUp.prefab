@@ -42,6 +42,7 @@ MonoBehaviour:
   mainText: LevelUP
   secondaryText: Your max health increases
   MainSprite: {fileID: 21300000, guid: 16236d3ea888f164b87e3e7f382230d9, type: 3}
+  sM: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

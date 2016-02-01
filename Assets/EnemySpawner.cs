@@ -21,7 +21,8 @@ public class EnemySpawner : MonoBehaviour {
 
     IEnumerator TimeToSpawn() {
         yield return new WaitForSeconds(0.5f);
-        Instantiate(toSpawn, transform.position, Quaternion.identity);
+        GameObject enemy =(GameObject) Instantiate(toSpawn, transform.position, Quaternion.identity);
+        enemy.GetComponent<Enemy>().maxHP += (int)LevelManager.Instance.currentLevel/2;
         Destroy(gameObject);
     }
 }

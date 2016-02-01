@@ -11,7 +11,7 @@ public class TransformMage : DoubleOptionEvent {
         if (Random.Range(0, 100) < 0)
         {
             
-            secondaryText = "Ewww! Kissing a frog? You lose 1 hp";
+            secondaryText = "The frog was poisoned! You lose 1 hp";
             pC.TakeNonLethalDamage(1);
             PlayFail();
 
@@ -36,7 +36,7 @@ public class TransformMage : DoubleOptionEvent {
     public override void OnClick2()
     {
 
-        if (Random.Range(0, 100) < 50)
+        if (Random.Range(0, 100) < 30)
         {
             mainText = "";
             secondaryText = "I guess this frog ain't getting any tonight";
@@ -46,7 +46,7 @@ public class TransformMage : DoubleOptionEvent {
         else {
 
             mainText = "The frog curses you!";
-            secondaryText = "The frog says: \"Now you will see what it is to be a ugly ass frog!!\"";
+            secondaryText = "\"Now you will see what it is to be like me!!\"";
             LevelManager.Instance.Player.GetComponent<Actor>().sH.GetComponent<SpriteRenderer>().sprite = MainSprite;
             PlayFail();
         

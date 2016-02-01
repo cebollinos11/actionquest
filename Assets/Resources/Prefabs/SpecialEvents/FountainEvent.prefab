@@ -42,6 +42,7 @@ MonoBehaviour:
   mainText: You find a magic fountain
   secondaryText: Do you drink from it?
   MainSprite: {fileID: 21302820, guid: 86cb6424fc85f334c82cd354bf3c84fd, type: 3}
+  sM: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
